@@ -217,7 +217,7 @@ public class TasksActivity extends Activity {
                 }
 
                 HttpClient client = new DefaultHttpClient();
-                HttpPost httpPost = new HttpPost("http://www.kanmanus.com/ijoint/app/upload_result_items.php");
+                HttpPost httpPost = new HttpPost("http://www.nuntiya.com/ijoint/app/upload_result_items.php");
 
                 try {
                     List<NameValuePair> nVP = new ArrayList<NameValuePair>(2);
@@ -245,7 +245,7 @@ public class TasksActivity extends Activity {
             nameValuePairs.add(new BasicNameValuePair("perform_datetimes", performDateTimes));
 
             try {
-                Function.jsonParse("http://www.kanmanus.com/ijoint/app/update_tasks.php", nameValuePairs);
+                Function.jsonParse("http://www.nuntiya.com/ijoint/app/update_tasks.php", nameValuePairs);
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (JSONException e) {
@@ -254,7 +254,7 @@ public class TasksActivity extends Activity {
         }
 
         public void downloadTasks(){
-            String url = "http://www.kanmanus.com/ijoint/app/get_tasks.php";
+            String url = "http://www.nuntiya.com/ijoint/app/get_tasks.php";
 
             // Add your data
             List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
@@ -313,7 +313,7 @@ public class TasksActivity extends Activity {
             List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
             nameValuePairs.add(new BasicNameValuePair("tid_list", list));
 
-            Function.jsonParse("http://www.kanmanus.com/ijoint/app/update_status.php", nameValuePairs);
+            Function.jsonParse("http://www.nuntiya.com/ijoint/app/update_status.php", nameValuePairs);
         }
 
         public void showTask(){

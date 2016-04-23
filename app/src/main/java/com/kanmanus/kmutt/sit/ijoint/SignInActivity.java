@@ -96,7 +96,7 @@ public class SignInActivity extends Activity {
         protected void onProgressUpdate(Void... values) { }
 
         public void signIn(){
-            String url = "http://www.kanmanus.com/ijoint/app/sign_in.php";
+            String url = "http://www.nuntiya.com/ijoint/app/sign_in.php";
 
             // Add your data
             List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();

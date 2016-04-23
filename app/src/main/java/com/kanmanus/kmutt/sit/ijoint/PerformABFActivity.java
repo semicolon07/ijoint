@@ -258,7 +258,7 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
 
             // postData to Web
             HttpClient httpclient = new DefaultHttpClient();
-            HttpPost httppost = new HttpPost("http://www.kanmanus.com/ijoint/app/upload_result_items.php");
+            HttpPost httppost = new HttpPost("http://www.nuntiya.com/ijoint/app/upload_result_items.php");
 
             try {
                 List<NameValuePair> nVP = new ArrayList<NameValuePair>(2);
