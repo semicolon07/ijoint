@@ -14,7 +14,6 @@ public class Contextor {
             instance = new Contextor();
         return instance;
     }
-
     private Context mContext;
 
     private Contextor() {
