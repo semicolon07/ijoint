@@ -8,6 +8,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,13 +25,8 @@ import com.kanmanus.kmutt.sit.ijoint.db.ResultItemDataSource;
 import com.kanmanus.kmutt.sit.ijoint.db.TaskDataSource;
 import com.kanmanus.kmutt.sit.ijoint.models.ResultItem;
 import com.kanmanus.kmutt.sit.ijoint.models.Task;
+import com.kanmanus.kmutt.sit.ijoint.net.HttpManager;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -212,85 +208,48 @@ public class TasksActivity extends Activity {
                 try {
                     json.put("perform_datetime", performDateTime);
                     json.put("result", resultJSONArray);
-                } catch (JSONException e) {
+                    HttpManager.getInstance().getService().uploadResultItems(json.toString()).execute();
+
+                    tasksId += tid;
+                    performDateTimes += performDateTime;
+                    if (i != finishedTasks.size()) {
+                        tasksId += ",";
+                        performDateTimes += ",";
+                    }
+
+                    taskDataSource.updateIsSynced(tid, "y");
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
-
-                HttpClient client = new DefaultHttpClient();
-                HttpPost httpPost = new HttpPost("http://www.nuntiya.com/ijoint/app/upload_result_items.php");
-
-                try {
-                    List<NameValuePair> nVP = new ArrayList<NameValuePair>(2);
-                    nVP.add(new BasicNameValuePair("json", json.toString()));  //studentJson is the JSON input
-
-                    httpPost.setEntity(new UrlEncodedFormEntity(nVP));
-                    client.execute(httpPost);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                tasksId += tid;
-                performDateTimes += performDateTime;
-
-                if (i != finishedTasks.size()) {
-                    tasksId += ",";
-                    performDateTimes += ",";
-                }
-
-                taskDataSource.updateIsSynced(tid, "y");
             }
-
-            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-            nameValuePairs.add(new BasicNameValuePair("tid_list", tasksId));
-            nameValuePairs.add(new BasicNameValuePair("perform_datetimes", performDateTimes));
-
-            try {
-                Function.jsonParse("http://www.nuntiya.com/ijoint/app/update_tasks.php", nameValuePairs);
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (JSONException e) {
+            try{
+                HttpManager.getInstance().getService().updateTask(tasksId,performDateTimes).execute();
+            }catch (Exception e){
                 e.printStackTrace();
             }
         }
 
         public void downloadTasks(){
-            String url = "http://www.nuntiya.com/ijoint/app/get_tasks.php";
-
-            // Add your data
-            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-            nameValuePairs.add(new BasicNameValuePair("pid", patientId));
-
-            ArrayList<String> tidList = new ArrayList<String>();
-
             try {
-                JSONArray jArr = new JSONArray(Function.jsonParse(url, nameValuePairs));
-
-                for (int i=0; i<jArr.length(); i++){
-                    JSONObject task = jArr.getJSONObject(i);
-
-                    String tid = task.getString("tid");
-                    String pid = task.getString("pid");
-                    String date = task.getString("date");
-                    String side = task.getString("side");
-                    String target_angle = task.getString("target_angle");
-                    String number_of_round = task.getString("number_of_round");
-                    String is_abf = task.getString("is_abf");
-
-                    if (taskDataSource.get(tid) == null){
+                List<Task> tasks = HttpManager.getInstance().getService().getTasks(patientId).execute().body();
+                ArrayList<String> tidList = new ArrayList<String>();
+                Log.d("TasksActivity","Task size = "+String.valueOf(tasks.size()));
+                for(Task task : tasks){
+                    Log.d("TasksActivity","Task Id = "+task.tid);
+                    if (taskDataSource.get(task.tid) == null){
                         // insert task into sqlite
-                        taskDataSource.create(tid, pid, date, side, target_angle, number_of_round, is_abf, "n", "0000-00-00");
+                        taskDataSource.create(task.tid, task.pid, task.date, task.side, task.target_angle, task.number_of_round, task.is_abf, "n", "0000-00-00");
                     }
                     else{
                         // update task
-                        taskDataSource.edit(tid, pid, date, side, target_angle, number_of_round, is_abf);
+                        taskDataSource.edit(task.tid, task.pid, task.date, task.side, task.target_angle, task.number_of_round, task.is_abf);
                     }
 
-                    tidList.add(tid);
+                    tidList.add(task.tid);
                 }
-
                 updateToWeb(tidList);
             } catch (IOException e) {
-                // TODO Auto-generated catch block
+                e.printStackTrace();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -309,11 +268,7 @@ public class TasksActivity extends Activity {
 
                 i++;
             }
-
-            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-            nameValuePairs.add(new BasicNameValuePair("tid_list", list));
-
-            Function.jsonParse("http://www.nuntiya.com/ijoint/app/update_status.php", nameValuePairs);
+            HttpManager.getInstance().getService().updateStatus(list).execute();
         }
 
         public void showTask(){
@@ -336,7 +291,7 @@ public class TasksActivity extends Activity {
 
                     String side = (t.side.equals("l"))?"Left":"Right";
 
-                    SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd");
+                    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
                     Date newDate = null;
                     try {
                         newDate = format.parse(t.date);

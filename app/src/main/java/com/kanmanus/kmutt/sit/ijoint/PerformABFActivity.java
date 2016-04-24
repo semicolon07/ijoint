@@ -19,19 +19,13 @@ import android.widget.Toast;
 import com.kanmanus.kmutt.sit.ijoint.db.ResultItemDataSource;
 import com.kanmanus.kmutt.sit.ijoint.db.TaskDataSource;
 import com.kanmanus.kmutt.sit.ijoint.models.ResultItem;
+import com.kanmanus.kmutt.sit.ijoint.net.HttpManager;
 import com.kanmanus.kmutt.sit.ijoint.sensor.Orientation;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -39,7 +33,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 
 
 public class PerformABFActivity extends Activity implements Orientation.Listener {
@@ -252,23 +245,11 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
                 json.put("score", score);
                 json.put("perform_datetime", performDateTime);
                 json.put("result", resultJSONArray);
+                HttpManager.getInstance().getService().uploadResultItems(json.toString());
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
-            // postData to Web
-            HttpClient httpclient = new DefaultHttpClient();
-            HttpPost httppost = new HttpPost("http://www.nuntiya.com/ijoint/app/upload_result_items.php");
-
-            try {
-                List<NameValuePair> nVP = new ArrayList<NameValuePair>(2);
-                nVP.add(new BasicNameValuePair("json", json.toString()));
-
-                httppost.setEntity(new UrlEncodedFormEntity(nVP));
-                httpclient.execute(httppost);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 

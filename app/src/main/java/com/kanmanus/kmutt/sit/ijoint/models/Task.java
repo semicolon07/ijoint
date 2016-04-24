@@ -13,6 +13,8 @@ public class Task {
     public String is_abf;
     public String is_synced;
     public String perform_datetime;
+    public String status;
+    public String exercise_type;
 
     public Task(String tid, String pid, String date, String side, String target_angle, String number_of_round, String is_abf, String is_synced) {
         this.tid = tid;
@@ -24,4 +26,5 @@ public class Task {
         this.is_abf = is_abf;
         this.is_synced = is_synced;
     }
+
 }

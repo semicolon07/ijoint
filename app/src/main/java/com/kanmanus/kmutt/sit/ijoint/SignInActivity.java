@@ -12,14 +12,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.kanmanus.kmutt.sit.ijoint.models.SignInResponse;
+import com.kanmanus.kmutt.sit.ijoint.net.HttpManager;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+
+import retrofit2.Call;
 
 
 public class SignInActivity extends Activity {
@@ -96,26 +94,16 @@ public class SignInActivity extends Activity {
         protected void onProgressUpdate(Void... values) { }
 
         public void signIn(){
-            String url = "http://www.nuntiya.com/ijoint/app/sign_in.php";
-
-            // Add your data
-            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-            nameValuePairs.add(new BasicNameValuePair("username", username.getText().toString()));
-            nameValuePairs.add(new BasicNameValuePair("password", password.getText().toString()));
-
+            Call<SignInResponse> call = HttpManager.getInstance().getService().signIn(username.getText().toString(),password.getText().toString());
+            SignInResponse response = null;
             try {
-                JSONObject jObject = new JSONObject(Function.jsonParse(url, nameValuePairs));
+                response = call.execute().body();
 
-                boolean isPassed = jObject.getBoolean("status");
-                String pid = jObject.getString("pid");
-                String firstName = jObject.getString("pFirstName");
-                String lastName = jObject.getString("pLastName");
-
-                if (isPassed) {
+                if (response.isStatus()) {
                     SharedPreferences.Editor editor = sharedPref.edit();
-                    editor.putString("patientId", pid);
-                    editor.putString("patientFirstName", firstName);
-                    editor.putString("patientLastName", lastName);
+                    editor.putString("patientId", response.getPid());
+                    editor.putString("patientFirstName", response.getFirstName());
+                    editor.putString("patientLastName", response.getLastName());
                     editor.commit();
 
                     Intent intent = new Intent(getApplicationContext(), TasksActivity.class);
@@ -125,10 +113,10 @@ public class SignInActivity extends Activity {
                     Toast.makeText(getApplicationContext(), "Incorrect Username/Password. Please try again.", Toast.LENGTH_SHORT).show();
                 }
             } catch (IOException e) {
-                // TODO Auto-generated catch block
-            } catch (JSONException e) {
                 e.printStackTrace();
             }
+
+
         }
     }
 }
