@@ -81,6 +81,7 @@ public class TasksActivity extends Activity {
                     intent.putExtra("target_angle", task.target_angle);
                     intent.putExtra("number_of_round", task.number_of_round);
                     intent.putExtra("is_abf", task.is_abf);
+                    intent.putExtra("exercise_type",task.exercise_type);
                     startActivity(intent);
                     finish();
                 }
@@ -235,14 +236,14 @@ public class TasksActivity extends Activity {
                 ArrayList<String> tidList = new ArrayList<String>();
                 Log.d("TasksActivity","Task size = "+String.valueOf(tasks.size()));
                 for(Task task : tasks){
-                    Log.d("TasksActivity","Task Id = "+task.tid);
+                    Log.d("TasksActivity","Task Id = "+task.tid+", Ex = "+task.exercise_type);
                     if (taskDataSource.get(task.tid) == null){
                         // insert task into sqlite
-                        taskDataSource.create(task.tid, task.pid, task.date, task.side, task.target_angle, task.number_of_round, task.is_abf, "n", "0000-00-00");
+                        taskDataSource.create(task.tid, task.pid, task.date, task.side, task.target_angle, task.number_of_round, task.is_abf, "n", "0000-00-00",task.exercise_type);
                     }
                     else{
                         // update task
-                        taskDataSource.edit(task.tid, task.pid, task.date, task.side, task.target_angle, task.number_of_round, task.is_abf);
+                        taskDataSource.edit(task.tid, task.pid, task.date, task.side, task.target_angle, task.number_of_round, task.is_abf,task.exercise_type);
                     }
 
                     tidList.add(task.tid);

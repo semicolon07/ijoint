@@ -22,7 +22,8 @@ public class TaskDataSource {
 			MySQLiteHelper.COL_TASK_PID, MySQLiteHelper.COL_TASK_DATE,
 			MySQLiteHelper.COL_TASK_SIDE, MySQLiteHelper.COL_TASK_TARGET_ANGLE,
 			MySQLiteHelper.COL_TASK_NUMBER_OF_ROUND, MySQLiteHelper.COL_TASK_IS_ABF,
-            MySQLiteHelper.COL_TASK_IS_SYNCED, MySQLiteHelper.COL_TASK_PERFORM_DATETIME };
+            MySQLiteHelper.COL_TASK_IS_SYNCED, MySQLiteHelper.COL_TASK_PERFORM_DATETIME,
+            MySQLiteHelper.COL_EXERCISE_TYPE };
 	
 	public TaskDataSource(Context context) {
 	    dbHelper = new MySQLiteHelper(context);
@@ -37,7 +38,7 @@ public class TaskDataSource {
 	  }
 
     public Task create(String tid, String pid, String date, String side, String target_angle,
-                     String number_of_round, String is_abf, String is_synced, String perform_datetime) {
+                       String number_of_round, String is_abf, String is_synced, String perform_datetime, String exercise_type) {
         ContentValues values = new ContentValues();
         values.put(MySQLiteHelper.COL_TASK_ID, tid);
         values.put(MySQLiteHelper.COL_TASK_PID, pid);
@@ -48,6 +49,7 @@ public class TaskDataSource {
         values.put(MySQLiteHelper.COL_TASK_IS_ABF, is_abf);
         values.put(MySQLiteHelper.COL_TASK_IS_SYNCED, is_synced);
         values.put(MySQLiteHelper.COL_TASK_PERFORM_DATETIME, perform_datetime);
+        values.put(MySQLiteHelper.COL_EXERCISE_TYPE,exercise_type);
 
         database.insert(TABLE, null, values);
 
@@ -55,14 +57,15 @@ public class TaskDataSource {
     }
 
     public void edit(String tid, String pid, String date, String side, String target_angle,
-                   String number_of_round, String is_abf) {
+                     String number_of_round, String is_abf, String exercise_type) {
         database.execSQL("UPDATE " + TABLE + " SET "
             + MySQLiteHelper.COL_TASK_PID + " = '" + pid + "', "
             + MySQLiteHelper.COL_TASK_DATE + " = '" + date + "', "
             + MySQLiteHelper.COL_TASK_SIDE + " = '" + side + "', "
             + MySQLiteHelper.COL_TASK_TARGET_ANGLE + " = '" + target_angle + "', "
             + MySQLiteHelper.COL_TASK_NUMBER_OF_ROUND + " = '" + number_of_round + "', "
-            + MySQLiteHelper.COL_TASK_IS_ABF + " = '" + is_abf + "'"
+            + MySQLiteHelper.COL_TASK_IS_ABF + " = '" + is_abf + "',"
+            + MySQLiteHelper.COL_EXERCISE_TYPE + " = '" + exercise_type + "' "
             + " WHERE " + PRIMARY_KEY + " = '" + tid + "'");
     }
 
@@ -140,6 +143,7 @@ public class TaskDataSource {
     private Task cursorToElement(Cursor cursor) {
         Task elem = new Task(cursor.getString(0), cursor.getString(1), cursor.getString(2),
                 cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6), cursor.getString(7));
+        elem.exercise_type = cursor.getString(9);
 
         return elem;
     }

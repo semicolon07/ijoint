@@ -27,4 +27,8 @@ public class Task {
         this.is_synced = is_synced;
     }
 
+    public static final String FLEXION = "f";
+    public static final String HORIZONTAL = "h";
+    public static final String EXTENSION = "e";
+
 }

@@ -48,6 +48,10 @@ public class PerformActivity extends Activity implements Orientation.Listener {
     private boolean isRecording = false;
     private long begin;
     private String performDateTime;
+    private String exercise_type;
+    private String azimuthAngle;
+    private String pitchAngle;
+    private String rollAngle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +68,10 @@ public class PerformActivity extends Activity implements Orientation.Listener {
         String targetAngle = intent.getStringExtra("target_angle");
         String numberOfRound = intent.getStringExtra("number_of_round");
         calibratedAngle = intent.getStringExtra("calibrated_angle");
+        exercise_type = intent.getStringExtra("exercise_type");
+        azimuthAngle = intent.getStringExtra("azimuthAngle");
+        pitchAngle = intent.getStringExtra("pitchAngle");
+        rollAngle = intent.getStringExtra("rollAngle");
 
         tvSide = (TextView) findViewById(R.id.side_value);
         tvTargetAngle = (TextView) findViewById(R.id.target_angle_value);
@@ -101,7 +109,7 @@ public class PerformActivity extends Activity implements Orientation.Listener {
     }
 
     @Override
-    public void onOrientationChanged(float azimuth, float pitch, float roll) {
+    public void onOrientationChanged(float azimuth, float pitch, float roll, float surfaceType) {
         double angle = roll;
 
         if (side.equals("l"))

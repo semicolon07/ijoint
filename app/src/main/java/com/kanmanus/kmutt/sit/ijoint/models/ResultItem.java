@@ -15,6 +15,7 @@ public class ResultItem {
     public String azimuth;
     public String pitch;
     public String roll;
+    public String magneticRoll;
 
     public ResultItem(String tid, String angle) {
         this.tid = tid;
@@ -43,9 +44,42 @@ public class ResultItem {
             obj.put("azimuth", azimuth);
             obj.put("pitch", pitch);
             obj.put("roll", roll);
+            obj.put("magneticRoll", magneticRoll);
         } catch (JSONException e) {
 
         }
         return obj;
+    }
+
+    public String getAzimuth() {
+        return azimuth;
+    }
+
+    public void setAzimuth(String azimuth) {
+        this.azimuth = azimuth;
+    }
+
+    public String getPitch() {
+        return pitch;
+    }
+
+    public void setPitch(String pitch) {
+        this.pitch = pitch;
+    }
+
+    public String getRoll() {
+        return roll;
+    }
+
+    public void setRoll(String roll) {
+        this.roll = roll;
+    }
+
+    public String getMagneticRoll() {
+        return magneticRoll;
+    }
+
+    public void setMagneticRoll(String magneticRoll) {
+        this.magneticRoll = magneticRoll;
     }
 }

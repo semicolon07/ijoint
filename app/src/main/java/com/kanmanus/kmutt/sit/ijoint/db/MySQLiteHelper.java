@@ -24,6 +24,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
   public static final String COL_TASK_IS_ABF = "is_abf";
   public static final String COL_TASK_IS_SYNCED = "is_sync";
   public static final String COL_TASK_PERFORM_DATETIME = "perform_datetime";
+  public static final String COL_EXERCISE_TYPE = "exercise_type";
   
   public static final String TABLE_RESULT_ITEM = "result_item";
   public static final String COL_RESULT_ITEM_ID = "iid";
@@ -45,6 +46,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 	      + ", " + COL_TASK_SIDE + ", " + COL_TASK_TARGET_ANGLE
 	      + ", " + COL_TASK_NUMBER_OF_ROUND + ", " + COL_TASK_IS_ABF
           + ", " + COL_TASK_IS_SYNCED + ", " + COL_TASK_PERFORM_DATETIME
+          + ", " + COL_EXERCISE_TYPE
 	      + ");";
   
   private static final String DATABASE_CREATE_RESULT_ITEM = "create table "
