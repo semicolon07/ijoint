@@ -52,13 +52,35 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
     private static SoundPool soundPool;
     private static HashMap<Integer, Integer> soundPoolMap;
     public static final int S_BEEP = R.raw.s_beep;
+    public static final int ALMOST = R.raw.almost;
+    public static final int GREAT = R.raw.great;
+    public static final int COUNT1 = R.raw.count_001;
+    public static final int COUNT2 = R.raw.count_002;
+    public static final int COUNT3 = R.raw.count_003;
+    public static final int COUNT4 = R.raw.count_004;
+    public static final int COUNT5 = R.raw.count_005;
+    public static final int COUNT6 = R.raw.count_006;
+    public static final int COUNT7 = R.raw.count_007;
+    public static final int COUNT8 = R.raw.count_008;
+    public static final int COUNT9 = R.raw.count_009;
+    public static final int COUNT10 = R.raw.count_010;
+    public static final int COUNT11 = R.raw.count_011;
+    public static final int COUNT12 = R.raw.count_012;
+    public static final int COUNT13 = R.raw.count_013;
+    public static final int COUNT14 = R.raw.count_014;
+    public static final int COUNT15 = R.raw.count_015;
+    public static final int COUNT16 = R.raw.count_016;
+    public static final int COUNT17 = R.raw.count_017;
+    public static final int COUNT18 = R.raw.count_018;
+    public static final int COUNT19 = R.raw.count_019;
+    public static final int COUNT20 = R.raw.count_020;
 
     private String tid, side, targetAngle, numberOfRound, calibratedAngle;
 
     private boolean isRecording = false;
     private long begin;
     private String performDateTime;
-
+    private float tempAngle = 0;
     private boolean isUp = true;
     private int score = 0;
     private String exercise_type;
@@ -120,6 +142,28 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
         soundPool = new SoundPool(2, AudioManager.STREAM_MUSIC, 100);
         soundPoolMap = new HashMap<Integer, Integer>(1);
         soundPoolMap.put( S_BEEP, soundPool.load(getApplicationContext(), S_BEEP, 1) );
+        soundPoolMap.put( ALMOST, soundPool.load(getApplicationContext(), ALMOST, 1) );
+        soundPoolMap.put( GREAT, soundPool.load(getApplicationContext(), GREAT, 1) );
+        soundPoolMap.put( COUNT1, soundPool.load(getApplicationContext(), COUNT1, 1) );
+        soundPoolMap.put( COUNT2, soundPool.load(getApplicationContext(), COUNT2, 1) );
+        soundPoolMap.put( COUNT3, soundPool.load(getApplicationContext(), COUNT3, 1) );
+        soundPoolMap.put( COUNT4, soundPool.load(getApplicationContext(), COUNT4, 1) );
+        soundPoolMap.put( COUNT5, soundPool.load(getApplicationContext(), COUNT5, 1) );
+        soundPoolMap.put( COUNT6, soundPool.load(getApplicationContext(), COUNT6, 1) );
+        soundPoolMap.put( COUNT7, soundPool.load(getApplicationContext(), COUNT7, 1) );
+        soundPoolMap.put( COUNT8, soundPool.load(getApplicationContext(), COUNT8, 1) );
+        soundPoolMap.put( COUNT9, soundPool.load(getApplicationContext(), COUNT9, 1) );
+        soundPoolMap.put( COUNT10, soundPool.load(getApplicationContext(), COUNT10, 1) );
+        soundPoolMap.put( COUNT11, soundPool.load(getApplicationContext(), COUNT11, 1) );
+        soundPoolMap.put( COUNT12, soundPool.load(getApplicationContext(), COUNT12, 1) );
+        soundPoolMap.put( COUNT13, soundPool.load(getApplicationContext(), COUNT13, 1) );
+        soundPoolMap.put( COUNT14, soundPool.load(getApplicationContext(), COUNT14, 1) );
+        soundPoolMap.put( COUNT15, soundPool.load(getApplicationContext(), COUNT15, 1) );
+        soundPoolMap.put( COUNT16, soundPool.load(getApplicationContext(), COUNT16, 1) );
+        soundPoolMap.put( COUNT17, soundPool.load(getApplicationContext(), COUNT17, 1) );
+        soundPoolMap.put( COUNT18, soundPool.load(getApplicationContext(), COUNT18, 1) );
+        soundPoolMap.put( COUNT19, soundPool.load(getApplicationContext(), COUNT19, 1) );
+        soundPoolMap.put( COUNT20, soundPool.load(getApplicationContext(), COUNT20, 1) );
 
         taskDataSource = new TaskDataSource(getApplicationContext());
         taskDataSource.open();
@@ -150,11 +194,27 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
         //Log.d("Orientation","azimuth:"+azimuth+",pitch:"+pitch+",roll:"+roll) ;
         if(Task.EXTENSION.equals(exercise_type)){
             errorAngle = pitch - Double.parseDouble(pitchAngle);
-            angle = azimuth - Double.parseDouble(calibratedAngle);
-            angleTv = azimuth - Double.parseDouble(azimuthAngle);
+            float temp = azimuth;
             if (!side.equals(LEFT)) {
-                angle = Double.parseDouble(calibratedAngle) - azimuth;
-                angleTv = Double.parseDouble(azimuthAngle) - azimuth;
+                if(Math.abs(tempAngle - azimuth) >270 && tempAngle != 0){
+                    temp -= 360;
+                }else{
+                    tempAngle = azimuth;
+                }
+                if(tempAngle != 0){
+                    angle = Double.parseDouble(calibratedAngle) - temp;
+                    angleTv = Double.parseDouble(azimuthAngle) - temp;
+                }
+            }else{
+                if(Math.abs(tempAngle - azimuth) >270 && tempAngle != 0){
+                    temp += 360;
+                }else{
+                    tempAngle = azimuth;
+                }
+                if(tempAngle != 0){
+                    angle = temp - Double.parseDouble(calibratedAngle);
+                    angleTv = temp - Double.parseDouble(azimuthAngle);
+                }
             }
         }
         else if(Task.HORIZONTAL.equals(exercise_type)){
@@ -170,8 +230,10 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
 //            }else if(surfaceType == Surface.ROTATION_90){
 //                roll = 180 + roll;
 //            }
-            angle = pitch - Double.parseDouble(calibratedAngle);
-            angleTv = pitch - Double.parseDouble(pitchAngle);
+
+                angle = Math.abs(Double.parseDouble(calibratedAngle) - roll);
+                angleTv =  Math.abs(Double.parseDouble(rollAngle) - roll);
+
         }
 
 
@@ -188,7 +250,6 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
         if (isRecording) {
             long current = System.currentTimeMillis();
             String time = "" + (current - begin);
-
             Date date = new Date(current-begin);
             DateFormat formatter = new SimpleDateFormat("mm:ss");
             String dateFormatted = formatter.format(date);
@@ -198,48 +259,53 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
             // store tid / time / angle into result item
             ResultItem resultItem = resultItemDataSource.create(tid, time, angleStr, rawAngleStr, azimuthStr, pitchStr, rollStr);
             resultItems.add(resultItem);
-            Log.d("errorAngle",""+errorAngle);
-            if(checkExerciseType(errorAngle) ){
-                EXERCISE_ERROR = NO;
+            //Log.d("errorAngle",""+errorAngle);
+            //if(checkExerciseType(errorAngle) ){
+            //    EXERCISE_ERROR = NO;
                 if (EXERCISE_STATE.equals(EXERCISE_START) && Double.parseDouble(angleStr) > Double.parseDouble(targetAngle)*0.8){ // 80 percent of target
                     if(isABF.equals(YES)){
-                        soundPool.play(soundPoolMap.get(S_BEEP), 0.6f, 0.6f, 1, 0, 1f);
+                        soundPool.play(soundPoolMap.get(ALMOST), 0.6f, 0.6f, 1, 0, 1f);
                     }
                     EXERCISE_STATE = EXERCISE_TARGET_80;
                 }
                 if (EXERCISE_STATE.equals(EXERCISE_TARGET_80) && Double.parseDouble(angleStr) > Double.parseDouble(targetAngle)){
                     if(isABF.equals(YES)){
-                        soundPool.play(soundPoolMap.get(S_BEEP), 0.6f, 0.6f, 1, 0, 1f);
+                        soundPool.play(soundPoolMap.get(GREAT), 0.6f, 0.6f, 1, 0, 1f);
                     }
                     score++;
                     EXERCISE_STATE = EXERCISE_SUCCESS;
-                    tvNumberOfRound.setText(score + "/" + numberOfRound);
+
                 }
-                if (EXERCISE_STATE.equals(EXERCISE_SUCCESS) && Double.parseDouble(angleStr) < 5) {
+                if (EXERCISE_STATE.equals(EXERCISE_SUCCESS) && Double.parseDouble(angleStr) < 0) {
+                    tvNumberOfRound.setText(score + "/" + numberOfRound);
                     if(isABF.equals(YES)){
-                        soundPool.play(soundPoolMap.get(S_BEEP), 0.6f, 0.6f, 1, 0, 1f);
+                        soundPoolCount(score);
                     }
-                    if(numberOfRound.equals(String.valueOf(score))){
-                        isRecording = false;
-                        tvAngle.setVisibility(View.GONE);
-                        uploadingLayout.setVisibility(View.VISIBLE);
-
-                        taskDataSource.updateIsSynced(tid, "f");
-                        taskDataSource.updatePerformDateTime(tid, performDateTime);
-
-                        new UploadToWeb().execute();
-                    }
+//                    if(numberOfRound.equals(String.valueOf(score))){
+//                        isRecording = false;
+//                        tvAngle.setVisibility(View.GONE);
+//                        uploadingLayout.setVisibility(View.VISIBLE);
+//
+//                        taskDataSource.updateIsSynced(tid, "f");
+//                        taskDataSource.updatePerformDateTime(tid, performDateTime);
+//
+//                        new UploadToWeb().execute();
+//                    }
                     EXERCISE_STATE = EXERCISE_START;
                 }
-            }else{
-                if(isABF.equals(YES) && EXERCISE_ERROR.equals(NO)){
-                    soundPool.play(soundPoolMap.get(S_BEEP), 0.6f, 0.6f, 1, 0, 1f);
-                    EXERCISE_ERROR = YES;
-                }
-            }
+//            }else{
+//                if(isABF.equals(YES) && EXERCISE_ERROR.equals(NO)){
+//                    soundPool.play(soundPoolMap.get(S_BEEP), 0.6f, 0.6f, 1, 0, 1f);
+//                    EXERCISE_ERROR = YES;
+//                }
+//            }
         }
     }
-
+    public void soundPoolCount(int score){
+        int [] listSound = {COUNT1,COUNT2,COUNT3,COUNT4,COUNT5,COUNT6,COUNT7,COUNT8,COUNT9,COUNT10
+                ,COUNT11,COUNT12,COUNT13,COUNT14,COUNT15,COUNT16,COUNT17,COUNT18,COUNT19,COUNT20};
+        soundPool.play(soundPoolMap.get(listSound[score-1]), 0.6f, 0.6f, 1, 0, 1f);
+    }
     public boolean checkExerciseType( double angleCheck){
         boolean chk = true;
         if(Task.FLEXION.equals(exercise_type)){

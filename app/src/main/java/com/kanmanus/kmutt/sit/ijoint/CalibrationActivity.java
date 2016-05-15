@@ -113,7 +113,7 @@ public class CalibrationActivity extends Activity implements Orientation.Listene
 //                }else if(surfaceType == Surface.ROTATION_90){
 //                    roll = 180 + roll;
 //                }
-                angle = pitch;
+                angle = roll;
             }
             tvAngle.setText(df.format(angle) + "°");
 

@@ -18,12 +18,12 @@ public class Orientation implements SensorEventListener {
     void onOrientationChanged(float azimuth, float pitch, float roll ,float magneticRoll);
   }
 
-  private static final int SENSOR_DELAY_MICROS = 100 * 1000; // 50ms
+  private static final int SENSOR_DELAY_MICROS = 100 * 1000; // 10ms
 
   private final SensorManager mSensorManager;
   private final WindowManager mWindowManager;
   private final Sensor mOrientationSensor;
-  private final Sensor mMagneticSensor;
+  //private final Sensor mMagneticSensor;
   private int mLastAccuracy;
   private Listener mListener;
 
@@ -32,7 +32,7 @@ public class Orientation implements SensorEventListener {
     mWindowManager = windowManager;
     // Can be null if the sensor hardware is not available
     mOrientationSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
-    mMagneticSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+   // mMagneticSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
   }
 
   public void startListening(Listener listener) {
@@ -45,7 +45,7 @@ public class Orientation implements SensorEventListener {
       return;
     }
     mSensorManager.registerListener(this, mOrientationSensor, SENSOR_DELAY_MICROS);
-    mSensorManager.registerListener(this, mMagneticSensor, SENSOR_DELAY_MICROS);
+   // mSensorManager.registerListener(this, mMagneticSensor, SENSOR_DELAY_MICROS);
   }
 
   public void stopListening() {
@@ -73,9 +73,9 @@ public class Orientation implements SensorEventListener {
       setOrientation(event.values,screenRotation);
       //updateOrientation(event.values);
     }
-    if(event.sensor == mMagneticSensor){
-      screenRotation = event.values[2];
-    }
+//    if(event.sensor == mMagneticSensor){
+//      screenRotation = event.values[2];
+//    }
   }
 
   private void setOrientation(float[] orientationMatrix, float magneticRoll){
