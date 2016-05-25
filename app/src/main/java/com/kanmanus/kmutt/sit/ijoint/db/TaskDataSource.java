@@ -76,6 +76,13 @@ public class TaskDataSource {
             + " WHERE " + PRIMARY_KEY + " = '" + tid + "'");
     }
 
+    public void updateIsStatus(String tid, String status) {
+
+        database.execSQL("UPDATE " + TABLE + " SET "
+                + MySQLiteHelper.COL_STATUS + " = '" + status + "'"
+                + " WHERE " + PRIMARY_KEY + " = '" + tid + "'");
+    }
+
     public void updatePerformDateTime(String tid, String performDateTime) {
 
         database.execSQL("UPDATE " + TABLE + " SET "

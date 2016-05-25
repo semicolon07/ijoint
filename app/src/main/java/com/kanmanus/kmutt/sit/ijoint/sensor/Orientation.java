@@ -22,8 +22,9 @@ public class Orientation implements SensorEventListener {
 
   private final SensorManager mSensorManager;
   private final WindowManager mWindowManager;
-  private final Sensor mOrientationSensor;
+//  private final Sensor mOrientationSensor;
   //private final Sensor mMagneticSensor;
+  private final Sensor mRotateMatrix;
   private int mLastAccuracy;
   private Listener mListener;
 
@@ -31,8 +32,9 @@ public class Orientation implements SensorEventListener {
     mSensorManager = sensorManager;
     mWindowManager = windowManager;
     // Can be null if the sensor hardware is not available
-    mOrientationSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
+   // mOrientationSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
    // mMagneticSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+    mRotateMatrix = mSensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
   }
 
   public void startListening(Listener listener) {
@@ -40,11 +42,8 @@ public class Orientation implements SensorEventListener {
       return;
     }
     mListener = listener;
-    if (mOrientationSensor == null) {
-      Log.w(">>", "Rotation vector sensor not available; will not provide orientation data.");
-      return;
-    }
-    mSensorManager.registerListener(this, mOrientationSensor, SENSOR_DELAY_MICROS);
+  //  mSensorManager.registerListener(this, mOrientationSensor, SENSOR_DELAY_MICROS);
+    mSensorManager.registerListener(this,mRotateMatrix,SENSOR_DELAY_MICROS);
    // mSensorManager.registerListener(this, mMagneticSensor, SENSOR_DELAY_MICROS);
   }
 
@@ -68,38 +67,36 @@ public class Orientation implements SensorEventListener {
     if (mLastAccuracy == SensorManager.SENSOR_STATUS_UNRELIABLE) {
       return;
     }
-    if (event.sensor == mOrientationSensor) {
-
-      setOrientation(event.values,screenRotation);
-      //updateOrientation(event.values);
-    }
+//    if (event.sensor == mOrientationSensor) {
+//      setOrientation(event.values,screenRotation);
+//    }
 //    if(event.sensor == mMagneticSensor){
 //      screenRotation = event.values[2];
 //    }
+    if(event.sensor == mRotateMatrix){
+      float[] rMatrix = new float[9];
+      float[] orientationMatrix = new float[9];
+
+      SensorManager.getRotationMatrixFromVector(rMatrix, event.values);
+      SensorManager.getOrientation(rMatrix, orientationMatrix);
+      setOrientation(orientationMatrix);
+     }
   }
 
-  private void setOrientation(float[] orientationMatrix, float magneticRoll){
-    float azimuth = orientationMatrix[0];
+  private void setOrientation(float[] orientationMatrix){
+    float azimuth = (float)((Math.toDegrees(orientationMatrix[0])) + 180.0);
     float pitch = orientationMatrix[1];
     float roll = orientationMatrix[2];
 
-    mListener.onOrientationChanged(azimuth, pitch, roll,magneticRoll);
+    mListener.onOrientationChanged(azimuth, pitch, roll,pitch);
   }
-//  private void updateOrientation(float[] rotationVector) {
-//    // Transform rotation matrix into azimuth/pitch/roll
-//    float[] orientation = new float[3];
-//    float[] rotationMatrix = new float[9];
-//    float[] qMatrix = new float[4];
-//    mSensorManager.getRotationMatrixFromVector(rotationMatrix,rotationVector);
-//    SensorManager.getOrientation(rotationMatrix, orientation);
-//    mSensorManager.getQuaternionFromVector(qMatrix,rotationVector);
-//    Log.d("quater Y ","X"+qMatrix[0]+" Y"+qMatrix[1]+" Z"+qMatrix[2]+" W"+qMatrix[3]);
-//    //Log.d("rotationMatrix"," rotationMatrix => {"+rotationMatrix[0]+","+rotationMatrix[1]+","+rotationMatrix[2]+","+rotationMatrix[3]+","+rotationMatrix[4]+","+rotationMatrix[5]+","+rotationMatrix[6]+","+rotationMatrix[7]+","+rotationMatrix[8]+"}");
-//    // Convert radians to degrees
-//    float azimuth = (float)Math.toDegrees(orientation[0]);
-//    float pitch = (float)Math.toDegrees(orientation[1]);
-//    float roll = (float)Math.toDegrees(orientation[2]);
-//    int screenRotation = 0;
-//    mListener.onOrientationChanged(azimuth, pitch, roll,screenRotation);
+
+//  private void setOrientation(float[] orientationMatrix, float magneticRoll){
+//    float azimuth = orientationMatrix[0];
+//    float pitch = orientationMatrix[1];
+//    float roll = orientationMatrix[2];
+//
+//    mListener.onOrientationChanged(azimuth, pitch, roll,magneticRoll);
 //  }
+
 }

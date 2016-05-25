@@ -29,9 +29,9 @@ public interface IjointService {
 
     @FormUrlEncoded
     @POST(URL.UPLOAD_RESULT_ITEM)
-    Call<Void> uploadResultItems(@Field("json") String json);
+    Call<String> uploadResultItems(@Field("json") String json);
 
     @FormUrlEncoded
     @POST(URL.UPDATE_TASK)
-    Call<Void> updateTask(@Field("tid_list") String tIdList,@Field("perform_datetimes") String erformDateTime);
+    Call<Void> updateTask(@Field("tid_list") String tIdList,@Field("perform_datetimes") String performDateTime);
 }

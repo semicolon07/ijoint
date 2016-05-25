@@ -248,11 +248,11 @@ public class TasksActivity extends Activity {
 
                     tidList.add(task.tid);
                 }
-                updateToWeb(tidList);
+                //updateToWeb(tidList);
             } catch (IOException e) {
                 e.printStackTrace();
-            } catch (JSONException e) {
-                e.printStackTrace();
+//            } catch (JSONException e) {
+//                e.printStackTrace();
             }
         }
 
@@ -269,6 +269,7 @@ public class TasksActivity extends Activity {
 
                 i++;
             }
+            Log.d("list",""+list);
             HttpManager.getInstance().getService().updateStatus(list).execute();
         }
 

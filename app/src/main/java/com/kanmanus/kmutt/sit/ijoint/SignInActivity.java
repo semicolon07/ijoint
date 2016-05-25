@@ -8,6 +8,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -44,7 +45,6 @@ public class SignInActivity extends Activity {
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
-
         sharedPref = getSharedPreferences(MYPREF, 0);
         String patientId = sharedPref.getString("patientId", null);
         String patientFirstName = sharedPref.getString("patientFirstName", null);
@@ -65,7 +65,12 @@ public class SignInActivity extends Activity {
             new ChkAuth().execute();
         }
         else{
-            Toast.makeText(getApplicationContext(), "The Internet connection is required for logging in.", Toast.LENGTH_SHORT).show();
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(getApplicationContext(), "The Internet connection is required for logging in.", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 
@@ -96,7 +101,9 @@ public class SignInActivity extends Activity {
         public void signIn(){
             Call<SignInResponse> call = HttpManager.getInstance().getService().signIn(username.getText().toString(),password.getText().toString());
             SignInResponse response = null;
+
             try {
+
                 response = call.execute().body();
 
                 if (response.isStatus()) {
@@ -110,7 +117,13 @@ public class SignInActivity extends Activity {
                     startActivity(intent);
                     finish();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Incorrect Username/Password. Please try again.", Toast.LENGTH_SHORT).show();
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(), "Incorrect Username/Password. Please try again.", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
                 }
             } catch (IOException e) {
                 e.printStackTrace();

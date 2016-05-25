@@ -45,13 +45,9 @@ public class CalibrationActivity extends Activity implements Orientation.Listene
 
     private boolean isRecording = false;
     private boolean isFinish = false;
-
     private ArrayList<ResultItem> resultItems;
     private String exercise_type;
     private String azimuthAngle;
-    private String pitchAngle;
-    private String rollAngle;
-    private String magneticRoll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,30 +96,27 @@ public class CalibrationActivity extends Activity implements Orientation.Listene
     public void onOrientationChanged(float azimuth, float pitch, float roll, float magneticRoll) {
         //Log.d("surfaceType","surfaceType => "+surfaceType);
         if (!isFinish){
-            float angle = roll;
+            float angle = 0;
+            float supAngle = 0;
             if(Task.EXTENSION.equals(exercise_type)){
                 angle = azimuth;
+                azimuthAngle = df.format(azimuth);
+                supAngle = pitch;
             }
             else if(Task.HORIZONTAL.equals(exercise_type)){
                 angle = pitch;
+                supAngle = pitch + 90 ;
             }
             else if(Task.FLEXION.equals(exercise_type)){
-//                if(surfaceType == Surface.ROTATION_0){
-//                    roll = 180 - roll;
-//                }else if(surfaceType == Surface.ROTATION_90){
-//                    roll = 180 + roll;
-//                }
-                angle = roll;
+                supAngle = magneticRoll + 90 ;
+                angle = magneticRoll;
             }
-            tvAngle.setText(df.format(angle) + "°");
+            //Log.d("Orientation","azimuth:"+azimuth+",pitch:"+pitch+",roll:"+roll) ;
 
+            tvAngle.setText(df.format(supAngle) + "°");
             if (isRecording) {
-                // store tid / time / angle into result item
                 ResultItem resultItem = new ResultItem(tid, df.format(angle));
-                resultItem.setAzimuth(df.format(azimuth));
-                resultItem.setPitch(df.format(pitch));
-                resultItem.setRoll(df.format(roll));
-                resultItem.setMagneticRoll(df.format(magneticRoll));
+                resultItem.setCalibate(df.format(supAngle));
                 resultItems.add(resultItem);
             }
         }
@@ -147,7 +140,6 @@ public class CalibrationActivity extends Activity implements Orientation.Listene
 
         public void start() {
             isRecording = true;
-
             final Handler handler = new Handler();
             final Runnable counter = new Runnable(){
 
@@ -163,26 +155,16 @@ public class CalibrationActivity extends Activity implements Orientation.Listene
                         btnNext.setVisibility(View.VISIBLE);
 
                         double sum = 0;
-                        double sum_azimuth = 0;
-                        double sum_pitch = 0;
-                        double sum_roll = 0;
-                        double sum_magneticRoll = 0;
+                        double sum_calibate = 0;
                         Iterator<ResultItem> iter = resultItems.iterator();
                         while (iter.hasNext()){
                             ResultItem item = iter.next();
 
                             sum += Double.parseDouble(item.angle);
-                            sum_azimuth += Double.parseDouble(item.getAzimuth());
-                            sum_pitch += Double.parseDouble(item.getPitch());
-                            sum_roll += Double.parseDouble(item.getRoll());
-                            sum_magneticRoll += Double.parseDouble(item.getMagneticRoll());
+                            sum_calibate += Double.parseDouble(item.getCalibate());
                         }
-                        azimuthAngle = "" + (sum_azimuth/resultItems.size());
-                        pitchAngle = "" + (sum_pitch/resultItems.size());
-                        rollAngle = "" + (sum_roll/resultItems.size());
                         calibratedAngle = "" + (sum/resultItems.size());
-                        magneticRoll = "" + (sum_magneticRoll/resultItems.size());
-                        Toast.makeText(getApplicationContext(), "The calibrated angle is " + calibratedAngle, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "The calibrated angle is " + df.format(sum_calibate/resultItems.size()), Toast.LENGTH_SHORT).show();
                     }
                     else {
                         int x = (int) (millisInFuture-1000) / 1000;
@@ -212,10 +194,7 @@ public class CalibrationActivity extends Activity implements Orientation.Listene
         i.putExtra("calibrated_angle", calibratedAngle);
         i.putExtra("exercise_type",exercise_type);
         i.putExtra("azimuthAngle",azimuthAngle);
-        i.putExtra("pitchAngle",pitchAngle);
-        i.putExtra("rollAngle",rollAngle);
         i.putExtra("isABF",isABF);
-        i.putExtra("magneticRoll",magneticRoll);
         startActivity(i);
         finish();
     }

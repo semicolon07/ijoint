@@ -111,10 +111,7 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
         calibratedAngle = intent.getStringExtra("calibrated_angle");
         exercise_type = intent.getStringExtra("exercise_type");
         azimuthAngle = intent.getStringExtra("azimuthAngle");
-        pitchAngle = intent.getStringExtra("pitchAngle");
-        rollAngle = intent.getStringExtra("rollAngle");
         isABF = intent.getStringExtra("isABF");
-        magneticRoll = intent.getStringExtra("magneticRoll");
         mOrientation = new Orientation((SensorManager) getSystemService(Activity.SENSOR_SERVICE),
                 getWindow().getWindowManager());
 
@@ -191,51 +188,43 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
         double angle = 0;
         double errorAngle = 0;
         double angleTv = 0;
-        //Log.d("Orientation","azimuth:"+azimuth+",pitch:"+pitch+",roll:"+roll) ;
         if(Task.EXTENSION.equals(exercise_type)){
-            errorAngle = pitch - Double.parseDouble(pitchAngle);
+//            errorAngle = pitch - Double.parseDouble(pitchAngle);
             float temp = azimuth;
             if (!side.equals(LEFT)) {
-                if(Math.abs(tempAngle - azimuth) >270 && tempAngle != 0){
+                if(Math.abs(tempAngle - azimuth) > 270 && tempAngle != 0){
                     temp -= 360;
                 }else{
                     tempAngle = azimuth;
                 }
                 if(tempAngle != 0){
-                    angle = Double.parseDouble(calibratedAngle) - temp;
+                    angle = Double.parseDouble(azimuthAngle) - temp;
                     angleTv = Double.parseDouble(azimuthAngle) - temp;
                 }
             }else{
-                if(Math.abs(tempAngle - azimuth) >270 && tempAngle != 0){
+                if(Math.abs(tempAngle - azimuth) > 270 && tempAngle != 0){
                     temp += 360;
                 }else{
                     tempAngle = azimuth;
                 }
                 if(tempAngle != 0){
-                    angle = temp - Double.parseDouble(calibratedAngle);
+                    angle = temp - Double.parseDouble(azimuthAngle);
                     angleTv = temp - Double.parseDouble(azimuthAngle);
                 }
             }
         }
         else if(Task.HORIZONTAL.equals(exercise_type)){
-            errorAngle = azimuth - Double.parseDouble(azimuthAngle);
-            angle = pitch - Double.parseDouble(calibratedAngle);
-            angleTv = pitch - Double.parseDouble(pitchAngle);
+ //           errorAngle = azimuth - Double.parseDouble(azimuthAngle);
+            angle = pitch + 90;
+            angleTv = pitch + 90;
         }
 
         else if(Task.FLEXION.equals(exercise_type)){
-            errorAngle = magRoll - Double.parseDouble(magneticRoll);
-//            if(surfaceType == Surface.ROTATION_0){
-//                roll = 180 - roll;
-//            }else if(surfaceType == Surface.ROTATION_90){
-//                roll = 180 + roll;
-//            }
-
-                angle = Math.abs(Double.parseDouble(calibratedAngle) - roll);
-                angleTv =  Math.abs(Double.parseDouble(rollAngle) - roll);
-
+ //           errorAngle = magRoll - Double.parseDouble(magneticRoll);
+                angle = magRoll + 90;
+                angleTv = magRoll + 90;
         }
-
+       // Log.d("Orientation","azimuth:"+azimuth+",pitch:"+pitch+",roll:"+roll) ;
 
         String azimuthStr = "" + df.format(azimuth);
         String pitchStr = "" + df.format(pitch);
@@ -257,11 +246,12 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
             tvTime.setText(dateFormatted);
 
             // store tid / time / angle into result item
-            ResultItem resultItem = resultItemDataSource.create(tid, time, angleStr, rawAngleStr, azimuthStr, pitchStr, rollStr);
-            resultItems.add(resultItem);
-            //Log.d("errorAngle",""+errorAngle);
-            //if(checkExerciseType(errorAngle) ){
-            //    EXERCISE_ERROR = NO;
+            ResultItem item = resultItemDataSource.create(tid, time, angleStr, rawAngleStr, azimuthStr, pitchStr, rollStr);
+            resultItems.add(item);
+            if( Double.parseDouble(angleStr)<270){
+//Log.d("errorAngle",""+errorAngle);
+                //if(checkExerciseType(errorAngle) ){
+                //    EXERCISE_ERROR = NO;
                 if (EXERCISE_STATE.equals(EXERCISE_START) && Double.parseDouble(angleStr) > Double.parseDouble(targetAngle)*0.8){ // 80 percent of target
                     if(isABF.equals(YES)){
                         soundPool.play(soundPoolMap.get(ALMOST), 0.6f, 0.6f, 1, 0, 1f);
@@ -270,13 +260,14 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
                 }
                 if (EXERCISE_STATE.equals(EXERCISE_TARGET_80) && Double.parseDouble(angleStr) > Double.parseDouble(targetAngle)){
                     if(isABF.equals(YES)){
+                        soundPool.play(soundPoolMap.get(S_BEEP), 0.6f, 0.6f, 1, 0, 1f);
                         soundPool.play(soundPoolMap.get(GREAT), 0.6f, 0.6f, 1, 0, 1f);
                     }
                     score++;
                     EXERCISE_STATE = EXERCISE_SUCCESS;
 
                 }
-                if (EXERCISE_STATE.equals(EXERCISE_SUCCESS) && Double.parseDouble(angleStr) < 0) {
+                if (EXERCISE_STATE.equals(EXERCISE_SUCCESS) && Double.parseDouble(angleStr) < 5) {
                     tvNumberOfRound.setText(score + "/" + numberOfRound);
                     if(isABF.equals(YES)){
                         soundPoolCount(score);
@@ -299,12 +290,19 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
 //                    EXERCISE_ERROR = YES;
 //                }
 //            }
+            }
+
         }
     }
+
     public void soundPoolCount(int score){
-        int [] listSound = {COUNT1,COUNT2,COUNT3,COUNT4,COUNT5,COUNT6,COUNT7,COUNT8,COUNT9,COUNT10
-                ,COUNT11,COUNT12,COUNT13,COUNT14,COUNT15,COUNT16,COUNT17,COUNT18,COUNT19,COUNT20};
-        soundPool.play(soundPoolMap.get(listSound[score-1]), 0.6f, 0.6f, 1, 0, 1f);
+        try{
+            int [] listSound = {COUNT1,COUNT2,COUNT3,COUNT4,COUNT5,COUNT6,COUNT7,COUNT8,COUNT9,COUNT10
+                    ,COUNT11,COUNT12,COUNT13,COUNT14,COUNT15,COUNT16,COUNT17,COUNT18,COUNT19,COUNT20};
+            soundPool.play(soundPoolMap.get(listSound[score-1]), 0.6f, 0.6f, 1, 0, 1f);
+        }catch (Exception e){
+            e.getStackTrace();
+        }
     }
     public boolean checkExerciseType( double angleCheck){
         boolean chk = true;
@@ -339,6 +337,7 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
             uploadingLayout.setVisibility(View.VISIBLE);
 
             taskDataSource.updateIsSynced(tid, "f");
+            taskDataSource.updateIsStatus(tid, "d");
             taskDataSource.updatePerformDateTime(tid, performDateTime);
 
             new UploadToWeb().execute();
@@ -385,8 +384,9 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
                 json.put("score", score);
                 json.put("perform_datetime", performDateTime);
                 json.put("result", resultJSONArray);
-                HttpManager.getInstance().getService().uploadResultItems(json.toString());
-            } catch (JSONException e) {
+                HttpManager.getInstance().getService().uploadResultItems(json.toString()).execute();
+
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
