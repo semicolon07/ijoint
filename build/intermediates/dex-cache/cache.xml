@@ -1,3 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Users\Phetkhung\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\okio-1.6.0_212b2f3bc5352df6961e1027ecbf277407335712.jar" />
+    </item>
+    <item
+        jar="C:\Users\Phetkhung\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.2.0\f7873a2ebde246a45c2a8d6f3247108b4c88a879\okhttp-3.2.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\okhttp-3.2.0_3277bdaa70fdbbd94eb7e268dfccfb9b3f622ff2.jar" />
+    </item>
+    <item
+        jar="C:\Users\Phetkhung\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.2\f8d87f15b94b8d74e7ccf61d7eedb558811cdb30\converter-gson-2.0.2.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="f8d87f15b94b8d74e7ccf61d7eedb558811cdb30">
+        <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\converter-gson-2.0.2_d71782832f6a8d732a59213c38d2a259a8fe2984.jar" />
+    </item>
+    <item
+        jar="C:\Users\Phetkhung\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.0.2\43eeae0b9fb087bb3194ba59ab63a38a32fbf3e\retrofit-2.0.2.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="043eeae0b9fb087bb3194ba59ab63a38a32fbf3e">
+        <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\retrofit-2.0.2_44b5a150771d244993cbd47f690d509be4a90228.jar" />
+    </item>
+    <item
+        jar="C:\Users\Phetkhung\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.1\b9d63507329a7178e026fc334f87587ee5070ac5\gson-2.6.1.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="b9d63507329a7178e026fc334f87587ee5070ac5">
+        <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\gson-2.6.1_413f7a845c18fc25ea718852c4becc92dea6354c.jar" />
+    </item>
+
+</items>

@@ -15,23 +15,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/CalibrationActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/CalibrationActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/PerformABFActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/PerformABFActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/SignInActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/SignInActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/TasksActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/TasksActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/db/MySQLiteHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/db/MySQLiteHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/db/TaskDataSource.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/db/TaskDataSource.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fix/URL.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fix/URL.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/models/ResultItem.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/models/ResultItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/net/api/IjointService.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/net/api/IjointService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/sensor/Orientation.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/sensor/Orientation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
     </list>
     <ignored path="ijoint.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,11 +57,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PerformABFActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PerformABFActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/PerformABFActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.4782609">
-              <caret line="205" column="32" selection-start-line="205" selection-start-column="32" selection-end-line="205" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="212" column="17" selection-start-line="212" selection-start-column="17" selection-end-line="212" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="URL.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fix/URL.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.36956522">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -84,7 +80,7 @@
       <file leaf-file-name="Orientation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/sensor/Orientation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.333333">
+            <state vertical-scroll-proportion="0.0">
               <caret line="88" column="38" selection-start-line="88" selection-start-column="38" selection-end-line="88" selection-end-column="38" />
               <folding />
             </state>
@@ -1561,7 +1557,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fix/URL.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/SignInActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/TasksActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/db/MySQLiteHelper.java" />
@@ -1570,6 +1565,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/CalibrationActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/PerformABFActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/sensor/Orientation.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fix/URL.java" />
       </list>
     </option>
   </component>
@@ -1605,6 +1601,8 @@
     </navigator>
     <panes>
       <pane id="ProjectPane" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1673,15 +1671,13 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sensor" />
+              <option name="myItemId" value="fix" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2025,11 +2021,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/TasksActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/CalibrationActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/TasksActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -2091,7 +2094,6 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2121,7 +2123,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="78" column="30" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2129,7 +2130,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28929767">
           <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2147,13 +2147,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fix/URL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/net/api/IjointService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2165,7 +2158,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="276" column="59" selection-start-line="276" selection-start-column="59" selection-end-line="276" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2177,18 +2169,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/PerformABFActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="212" column="17" selection-start-line="212" selection-start-column="17" selection-end-line="212" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/sensor/Orientation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.333333">
+        <state vertical-scroll-proportion="0.0">
           <caret line="88" column="38" selection-start-line="88" selection-start-column="38" selection-end-line="88" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/PerformABFActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fix/URL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.4782609">
-          <caret line="205" column="32" selection-start-line="205" selection-start-column="32" selection-end-line="205" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.36956522">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
