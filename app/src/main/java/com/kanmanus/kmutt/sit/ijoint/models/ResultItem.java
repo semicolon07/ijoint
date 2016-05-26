@@ -44,7 +44,6 @@ public class ResultItem {
             obj.put("azimuth", azimuth);
             obj.put("pitch", pitch);
             obj.put("roll", roll);
-            obj.put("magneticRoll", magneticRoll);
         } catch (JSONException e) {
 
         }

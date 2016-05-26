@@ -190,27 +190,35 @@ public class TasksActivity extends Activity {
         public void uploadTasks(){
             // Get all tasks with isSynced = 'f'
             List<Task> finishedTasks = taskDataSource.getFinishedTasks();
-
             String tasksId = "";
             String performDateTimes = "";
             Iterator<Task> iter = finishedTasks.iterator();
             int i = 1;
             while (iter.hasNext()){
                 Task t = iter.next();
+
                 String tid = t.tid;
-                String performDateTime = "'" + t.perform_datetime + "'";
-
+                String performDateTime =  t.perform_datetime ;
                 List<ResultItem> resultItemList = resultItemDataSource.getByTid(tid);
+                JSONArray resultJSONArray = new JSONArray();
 
-                JSONArray resultJSONArray = new JSONArray(Arrays.asList(resultItemList));
+                Iterator<ResultItem> iterItem = resultItemList.iterator();
+                while (iterItem.hasNext()){
+                    ResultItem resultItem = iterItem.next();
+                    resultJSONArray.put(resultItem.getJSONObject());
+                }
 
                 JSONObject json = new JSONObject();
 
                 try {
                     json.put("perform_datetime", performDateTime);
                     json.put("result", resultJSONArray);
-                    HttpManager.getInstance().getService().uploadResultItems(json.toString()).execute();
-
+                    Log.d("json",""+json.toString());
+                    try{
+                        HttpManager.getInstance().getService().uploadResultItems(json.toString()).execute();
+                    }catch (Exception e){
+                        e.getStackTrace();
+                    }
                     tasksId += tid;
                     performDateTimes += performDateTime;
                     if (i != finishedTasks.size()) {
@@ -223,31 +231,33 @@ public class TasksActivity extends Activity {
                     e.printStackTrace();
                 }
             }
-            try{
-                HttpManager.getInstance().getService().updateTask(tasksId,performDateTimes).execute();
-            }catch (Exception e){
-                e.printStackTrace();
-            }
+//            try{
+//                HttpManager.getInstance().getService().updateTask(tasksId,performDateTimes).execute();
+//            }catch (Exception e){
+//                e.printStackTrace();
+//            }
         }
 
         public void downloadTasks(){
             try {
                 List<Task> tasks = HttpManager.getInstance().getService().getTasks(patientId).execute().body();
-                ArrayList<String> tidList = new ArrayList<String>();
-                Log.d("TasksActivity","Task size = "+String.valueOf(tasks.size()));
-                for(Task task : tasks){
-                    Log.d("TasksActivity","Task Id = "+task.tid+", Ex = "+task.exercise_type);
-                    if (taskDataSource.get(task.tid) == null){
-                        // insert task into sqlite
-                        taskDataSource.create(task.tid, task.pid, task.date, task.side, task.target_angle, task.number_of_round, task.is_abf, "n", "0000-00-00",task.exercise_type);
-                    }
-                    else{
-                        // update task
-                        taskDataSource.edit(task.tid, task.pid, task.date, task.side, task.target_angle, task.number_of_round, task.is_abf,task.exercise_type);
-                    }
+                if(tasks!=null){
+                    //ArrayList<String> tidList = new ArrayList<String>();
+                    for(Task task : tasks){
+                        Log.d("TasksActivity","Task Id = "+task.tid+", Ex = "+task.exercise_type);
+                        if (taskDataSource.get(task.tid) == null){
+                            // insert task into sqlite
+                            taskDataSource.create(task.tid, task.pid, task.date, task.side, task.target_angle, task.number_of_round, task.is_abf, "n", "0000-00-00",task.exercise_type);
+                        }
+                        else{
+                            // update task
+                            taskDataSource.edit(task.tid, task.pid, task.date, task.side, task.target_angle, task.number_of_round, task.is_abf,task.exercise_type);
+                        }
 
-                    tidList.add(task.tid);
+                       // tidList.add(task.tid);
+                    }
                 }
+
                 //updateToWeb(tidList);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -275,50 +285,58 @@ public class TasksActivity extends Activity {
 
         public void showTask(){
             allTasks = (ArrayList<Task>) taskDataSource.getAll(patientId);
+            if(allTasks!=null){
+                tasksListView.setAdapter(new ArrayAdapter<Task>(getApplicationContext(), R.layout.lv_task_ready, allTasks) {
+                    @Override
+                    public View getView(int position, View convertView, ViewGroup parent) {
+                        View v = convertView;
 
-            tasksListView.setAdapter(new ArrayAdapter<Task>(getApplicationContext(), R.layout.lv_task_ready, allTasks) {
-                @Override
-                public View getView(int position, View convertView, ViewGroup parent) {
-                    View v = convertView;
+                        Task t = getItem(position);
 
-                    Task t = getItem(position);
+                        LayoutInflater vi = LayoutInflater.from(getContext());
+                        if (t.is_synced.equals("n"))
+                            v = vi.inflate(R.layout.lv_task_ready, null);
+                        else if (t.is_synced.equals("f"))
+                            v = vi.inflate(R.layout.lv_task_complete, null);
+                        else if (t.is_synced.equals("y"))
+                            v = vi.inflate(R.layout.lv_task_synced, null);
 
-                    LayoutInflater vi = LayoutInflater.from(getContext());
-                    if (t.is_synced.equals("n"))
-                        v = vi.inflate(R.layout.lv_task_ready, null);
-                    else if (t.is_synced.equals("f"))
-                        v = vi.inflate(R.layout.lv_task_complete, null);
-                    else if (t.is_synced.equals("y"))
-                        v = vi.inflate(R.layout.lv_task_synced, null);
+                        String side = (t.side.equals("l"))?"Left":"Right";
 
-                    String side = (t.side.equals("l"))?"Left":"Right";
+                        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                        Date newDate = null;
+                        try {
+                            newDate = format.parse(t.date);
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
 
-                    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-                    Date newDate = null;
-                    try {
-                        newDate = format.parse(t.date);
-                    } catch (ParseException e) {
-                        e.printStackTrace();
+                        format = new SimpleDateFormat("dd MMM yyyy");
+                        String date = format.format(newDate);
+
+                        if (t != null) {
+                            TextView tvExerciseName = (TextView) v.findViewById(R.id.tv_exercise_name);
+                            TextView tvDate = (TextView) v.findViewById(R.id.tv_date);
+                            TextView tvTargetAngle = (TextView) v.findViewById(R.id.tv_target_angle);
+                            TextView tvNumberOfRound = (TextView) v.findViewById(R.id.tv_number_of_round);
+                            TextView tvType = (TextView) v.findViewById(R.id.tv_type_name);
+                            if(t.exercise_type.equals("e")){
+                                tvType.setText("Extension");
+                            }else if (t.exercise_type.equals("h")){
+                                tvType.setText("Horizontal Flexion");
+                            }else{
+                                tvType.setText("Flexion");
+                            }
+                            tvExerciseName.setText(side + " Shoulder Exercise" + ((t.is_abf.equals("y"))?" (ABF)":""));
+                            tvDate.setText(date);
+                            tvTargetAngle.setText(t.target_angle + "\u00b0");
+                            tvNumberOfRound.setText(t.number_of_round);
+                        }
+
+                        return v;
                     }
-
-                    format = new SimpleDateFormat("dd MMM yyyy");
-                    String date = format.format(newDate);
-
-                    if (t != null) {
-                        TextView tvExerciseName = (TextView) v.findViewById(R.id.tv_exercise_name);
-                        TextView tvDate = (TextView) v.findViewById(R.id.tv_date);
-                        TextView tvTargetAngle = (TextView) v.findViewById(R.id.tv_target_angle);
-                        TextView tvNumberOfRound = (TextView) v.findViewById(R.id.tv_number_of_round);
-
-                        tvExerciseName.setText(side + " Shoulder Exercise" + ((t.is_abf.equals("y"))?" (ABF)":""));
-                        tvDate.setText(date);
-                        tvTargetAngle.setText(t.target_angle + "\u00b0");
-                        tvNumberOfRound.setText(t.number_of_round);
-                    }
-
-                    return v;
-                }
-            });
+                });
+            }
         }
     }
 }

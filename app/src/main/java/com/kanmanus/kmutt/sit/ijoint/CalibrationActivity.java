@@ -111,7 +111,7 @@ public class CalibrationActivity extends Activity implements Orientation.Listene
                 supAngle = magneticRoll + 90 ;
                 angle = magneticRoll;
             }
-            Log.d("Orientation","azimuth:"+azimuth+",pitch:"+pitch+",roll:"+roll) ;
+            //Log.d("Orientation","azimuth:"+azimuth+",pitch:"+pitch+",roll:"+roll) ;
 
             tvAngle.setText(df.format(supAngle) + "°");
             if (isRecording) {
