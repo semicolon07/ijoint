@@ -84,9 +84,9 @@ public class Orientation implements SensorEventListener {
   }
 
   private void setOrientation(float[] orientationMatrix){
-    float azimuth = (float)((Math.toDegrees(orientationMatrix[0])) + 180.0);
-    float pitch = orientationMatrix[1];
-    float roll = orientationMatrix[2];
+    float azimuth = (float)(Math.toDegrees((orientationMatrix[0])) + 180.0);
+    float pitch = (float)(Math.toDegrees(orientationMatrix[1]));
+    float roll = (float)(Math.toDegrees(orientationMatrix[2]));
 
     mListener.onOrientationChanged(azimuth, pitch, roll,pitch);
   }
