@@ -97,6 +97,7 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
     private String EXERCISE_START = "1";
     private String EXERCISE_TARGET_80 = "2";
     private String EXERCISE_SUCCESS = "3";
+    private String EXERCISE_INCREASE = "1";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -252,20 +253,28 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
 //Log.d("errorAngle",""+errorAngle);
                 //if(checkExerciseType(errorAngle) ){
                 //    EXERCISE_ERROR = NO;
-                if (EXERCISE_STATE.equals(EXERCISE_START) && Double.parseDouble(angleStr) > Double.parseDouble(targetAngle)*0.8){ // 80 percent of target
+                if ((EXERCISE_STATE.equals(EXERCISE_START) || EXERCISE_INCREASE.equals(EXERCISE_SUCCESS)) && Double.parseDouble(angleStr) > Double.parseDouble(targetAngle)*0.8){ // 80 percent of target
                     if(isABF.equals(YES)){
                         soundPool.play(soundPoolMap.get(ALMOST), 0.6f, 0.6f, 1, 0, 1f);
                     }
-                    EXERCISE_STATE = EXERCISE_TARGET_80;
+                    if(EXERCISE_INCREASE.equals(EXERCISE_SUCCESS)){
+                        EXERCISE_INCREASE = EXERCISE_TARGET_80;
+                    }else{
+                        EXERCISE_STATE = EXERCISE_TARGET_80;
+                    }
                 }
-                if (EXERCISE_STATE.equals(EXERCISE_TARGET_80) && Double.parseDouble(angleStr) > Double.parseDouble(targetAngle)){
+                if ((EXERCISE_STATE.equals(EXERCISE_TARGET_80) || EXERCISE_INCREASE.equals(EXERCISE_TARGET_80)) && Double.parseDouble(angleStr) > Double.parseDouble(targetAngle)){
                     if(isABF.equals(YES)){
                         soundPool.play(soundPoolMap.get(S_BEEP), 0.6f, 0.6f, 1, 0, 1f);
                         soundPool.play(soundPoolMap.get(GREAT), 0.6f, 0.6f, 1, 0, 1f);
                     }
-                    score++;
-                    EXERCISE_STATE = EXERCISE_SUCCESS;
+                    if(!EXERCISE_INCREASE.equals(EXERCISE_TARGET_80)){
+                        score++;
+                        EXERCISE_STATE = EXERCISE_SUCCESS;
+                    }
+                    targetAngle = ""+(Double.parseDouble(targetAngle)+5);
 
+                    EXERCISE_INCREASE = EXERCISE_SUCCESS;
                 }
                 if (EXERCISE_STATE.equals(EXERCISE_SUCCESS) && Double.parseDouble(angleStr) < 5) {
                     tvNumberOfRound.setText(score + "/" + numberOfRound);
@@ -283,6 +292,7 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
 //                        new UploadToWeb().execute();
 //                    }
                     EXERCISE_STATE = EXERCISE_START;
+                    EXERCISE_INCREASE = EXERCISE_START;
                 }
 //            }else{
 //                if(isABF.equals(YES) && EXERCISE_ERROR.equals(NO)){
@@ -337,7 +347,7 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
             uploadingLayout.setVisibility(View.VISIBLE);
 
             taskDataSource.updateIsSynced(tid, "f");
-            taskDataSource.updateIsStatus(tid, "d");
+            taskDataSource.updateIsScore(tid, ""+score);
             taskDataSource.updatePerformDateTime(tid, performDateTime);
 
             new UploadToWeb().execute();
@@ -389,6 +399,7 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            taskDataSource.updateIsSynced(tid, "y");
 
         }
     }

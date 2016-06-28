@@ -23,7 +23,7 @@ public class TaskDataSource {
 			MySQLiteHelper.COL_TASK_SIDE, MySQLiteHelper.COL_TASK_TARGET_ANGLE,
 			MySQLiteHelper.COL_TASK_NUMBER_OF_ROUND, MySQLiteHelper.COL_TASK_IS_ABF,
             MySQLiteHelper.COL_TASK_IS_SYNCED, MySQLiteHelper.COL_TASK_PERFORM_DATETIME,
-            MySQLiteHelper.COL_EXERCISE_TYPE };
+            MySQLiteHelper.COL_EXERCISE_TYPE ,MySQLiteHelper.COL_SCORE};
 	
 	public TaskDataSource(Context context) {
 	    dbHelper = new MySQLiteHelper(context);
@@ -50,7 +50,7 @@ public class TaskDataSource {
         values.put(MySQLiteHelper.COL_TASK_IS_SYNCED, is_synced);
         values.put(MySQLiteHelper.COL_TASK_PERFORM_DATETIME, perform_datetime);
         values.put(MySQLiteHelper.COL_EXERCISE_TYPE,exercise_type);
-
+        values.put(MySQLiteHelper.COL_SCORE,"0");
         database.insert(TABLE, null, values);
 
         return this.get(tid);
@@ -80,6 +80,12 @@ public class TaskDataSource {
 
         database.execSQL("UPDATE " + TABLE + " SET "
                 + MySQLiteHelper.COL_STATUS + " = '" + status + "'"
+                + " WHERE " + PRIMARY_KEY + " = '" + tid + "'");
+    }
+    public void updateIsScore(String tid, String score) {
+
+        database.execSQL("UPDATE " + TABLE + " SET "
+                + MySQLiteHelper.COL_SCORE + " = '" + score + "'"
                 + " WHERE " + PRIMARY_KEY + " = '" + tid + "'");
     }
 
@@ -151,7 +157,7 @@ public class TaskDataSource {
         Task elem = new Task(cursor.getString(0), cursor.getString(1), cursor.getString(2),
                 cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6), cursor.getString(7));
         elem.exercise_type = cursor.getString(9);
-
+        elem.score = cursor.getString(10);
         return elem;
     }
 }

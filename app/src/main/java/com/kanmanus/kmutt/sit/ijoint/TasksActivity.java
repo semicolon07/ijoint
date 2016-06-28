@@ -212,8 +212,8 @@ public class TasksActivity extends Activity {
 
                 try {
                     json.put("perform_datetime", performDateTime);
+                    json.put("score", t.score);
                     json.put("result", resultJSONArray);
-                    Log.d("json",""+json.toString());
                     try{
                         HttpManager.getInstance().getService().uploadResultItems(json.toString()).execute();
                     }catch (Exception e){
@@ -292,29 +292,29 @@ public class TasksActivity extends Activity {
                         View v = convertView;
 
                         Task t = getItem(position);
+                        if (t.is_synced != null) {
+                            LayoutInflater vi = LayoutInflater.from(getContext());
+                            if (t.is_synced.equals("n"))
+                                v = vi.inflate(R.layout.lv_task_ready, null);
+                            else if (t.is_synced.equals("f"))
+                                v = vi.inflate(R.layout.lv_task_complete, null);
+                            else if (t.is_synced.equals("y"))
+                                v = vi.inflate(R.layout.lv_task_synced, null);
 
-                        LayoutInflater vi = LayoutInflater.from(getContext());
-                        if (t.is_synced.equals("n"))
-                            v = vi.inflate(R.layout.lv_task_ready, null);
-                        else if (t.is_synced.equals("f"))
-                            v = vi.inflate(R.layout.lv_task_complete, null);
-                        else if (t.is_synced.equals("y"))
-                            v = vi.inflate(R.layout.lv_task_synced, null);
+                            String side = (t.side.equals("l"))?"Left":"Right";
 
-                        String side = (t.side.equals("l"))?"Left":"Right";
+                            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                            Date newDate = null;
+                            try {
+                                newDate = format.parse(t.date);
+                            } catch (ParseException e) {
+                                e.printStackTrace();
+                            }
 
-                        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-                        Date newDate = null;
-                        try {
-                            newDate = format.parse(t.date);
-                        } catch (ParseException e) {
-                            e.printStackTrace();
-                        }
+                            format = new SimpleDateFormat("dd MMM yyyy");
+                            String date = format.format(newDate);
 
-                        format = new SimpleDateFormat("dd MMM yyyy");
-                        String date = format.format(newDate);
 
-                        if (t != null) {
                             TextView tvExerciseName = (TextView) v.findViewById(R.id.tv_exercise_name);
                             TextView tvDate = (TextView) v.findViewById(R.id.tv_date);
                             TextView tvTargetAngle = (TextView) v.findViewById(R.id.tv_target_angle);
