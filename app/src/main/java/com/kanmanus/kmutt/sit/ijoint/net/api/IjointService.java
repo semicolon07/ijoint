@@ -10,6 +10,7 @@ import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
+import rx.Observable;
 
 /**
  * Created by Semicolon07 on 4/24/2016 AD.
@@ -17,7 +18,7 @@ import retrofit2.http.POST;
 public interface IjointService {
     @FormUrlEncoded
     @POST(URL.SIGN_IN)
-    Call<SignInResponse> signIn(@Field("username") String userName,@Field("password") String password);
+    Observable<SignInResponse> signIn(@Field("username") String userName, @Field("password") String password);
 
     @FormUrlEncoded
     @POST(URL.GET_TASK)

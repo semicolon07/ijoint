@@ -29,5 +29,10 @@
     <string name="next">Next</string>
     <string name="setting">Setting</string>
     <string name="uploading">Now Uploading...</string>
+    <!--Error Message-->
+    <string name="error">Error : %s</string>
+    <string name="error.empty.username">Please enter your username</string>
+    <string name="error.empty.password">Please enter your password</string>
+    <string name="error.login.incorrect">Incorrect Username/Password. Please try again.</string>
 
 </resources>

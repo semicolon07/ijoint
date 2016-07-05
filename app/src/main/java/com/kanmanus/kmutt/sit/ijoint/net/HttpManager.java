@@ -9,6 +9,7 @@ import com.kanmanus.kmutt.sit.ijoint.fix.URL;
 import com.kanmanus.kmutt.sit.ijoint.net.api.IjointService;
 
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -35,6 +36,7 @@ public class HttpManager {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(URL.BASE_URL)
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
         service = retrofit.create(IjointService.class);

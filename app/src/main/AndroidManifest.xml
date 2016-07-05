@@ -1,58 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.kanmanus.kmutt.sit.ijoint" >
+    package="com.kanmanus.kmutt.sit.ijoint">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:name=".MyApplication"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
-            android:name="com.kanmanus.kmutt.sit.ijoint.SignInActivity"
-            android:theme="@android:style/Theme.NoTitleBar"
-            android:label="@string/app_name"
+            android:name=".activity.SignInActivity"
             android:icon="@drawable/ic_launcher_white"
+            android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" >
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name="com.kanmanus.kmutt.sit.ijoint.TasksActivity"
-            android:label="@string/app_name"
+            android:name=".activity.TasksActivity"
             android:icon="@drawable/ic_launcher_white"
-            android:screenOrientation="portrait" >
-        </activity>
-
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.kanmanus.kmutt.sit.ijoint.CalibrationActivity"
-            android:label="@string/app_name"
+            android:name=".activity.CalibrationActivity"
             android:icon="@drawable/ic_launcher_white"
-            android:screenOrientation="portrait" >
-        </activity>
-
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.kanmanus.kmutt.sit.ijoint.PerformActivity"
-            android:label="@string/app_name"
+            android:name=".activity.PerformActivity"
             android:icon="@drawable/ic_launcher_white"
-            android:screenOrientation="portrait" >
-        </activity>
-
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.kanmanus.kmutt.sit.ijoint.PerformABFActivity"
-            android:label="@string/app_name"
+            android:name=".activity.PerformABFActivity"
             android:icon="@drawable/ic_launcher_white"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.ProfileActivity"></activity>
     </application>
 
 </manifest>
