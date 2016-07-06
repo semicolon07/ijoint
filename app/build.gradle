@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion 23
@@ -18,33 +19,37 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
 def supportLibraryVersion = '23.4.0'
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.squareup.retrofit2:retrofit:2.0.2'
-    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha3'
     compile "com.android.support:appcompat-v7:${supportLibraryVersion}"
     compile "com.android.support:cardview-v7:${supportLibraryVersion}"
     compile "com.android.support:recyclerview-v7:${supportLibraryVersion}"
     compile "com.android.support:design:${supportLibraryVersion}"
     compile "com.android.support:preference-v7:${supportLibraryVersion}"
-    compile 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
 
     //Optional: see how to use the utility.
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha3'
+    compile 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
     compile 'com.ogaclejapan.smarttablayout:utils-v4:1.6.1@aar'
-    provided 'org.projectlombok:lombok:1.16.8'
     compile 'com.github.silvestrpredko:dot-progress-bar:0.1.4@aar'
     compile 'com.google.code.gson:gson:2.6.2'
     compile 'com.jakewharton:butterknife:8.1.0'
-    apt 'com.jakewharton:butterknife-compiler:8.1.0'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'de.hdodenhof:circleimageview:2.0.0'
     compile 'eu.davidea:flexible-adapter:5.0.0-b7'
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.1.6'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    apt 'com.jakewharton:butterknife-compiler:8.1.0'
+    provided 'org.projectlombok:lombok:1.16.8'
 }

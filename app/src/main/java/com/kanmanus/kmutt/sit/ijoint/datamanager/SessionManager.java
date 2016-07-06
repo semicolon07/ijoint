@@ -2,6 +2,7 @@ package com.kanmanus.kmutt.sit.ijoint.datamanager;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.kanmanus.kmutt.sit.ijoint.models.PatientProfileViewModel;
@@ -28,6 +29,7 @@ public class SessionManager {
         String json = gson.toJson(profileModel);
         userPrefsEditor.putString(PROPERTY_PROFILE, json);
         userPrefsEditor.commit();
+        Log.d("SessionManager",profileModel.toString());
     }
 
     public PatientProfileViewModel getSessionData() {

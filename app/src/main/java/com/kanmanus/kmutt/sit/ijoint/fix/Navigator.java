@@ -3,6 +3,7 @@ package com.kanmanus.kmutt.sit.ijoint.fix;
 import android.content.Context;
 import android.content.Intent;
 
+import com.kanmanus.kmutt.sit.ijoint.activity.MainActivity;
 import com.kanmanus.kmutt.sit.ijoint.activity.SignInActivity;
 import com.kanmanus.kmutt.sit.ijoint.activity.TasksActivity;
 
@@ -26,6 +27,10 @@ public class Navigator {
 
     public void navigateToLogin(Context context) {
         Intent intent = SignInActivity.callingIntent(context);
+        context.startActivity(intent);
+    }
+    public void navigateToMain(Context context){
+        Intent intent = MainActivity.callingIntent(context);
         context.startActivity(intent);
     }
 }

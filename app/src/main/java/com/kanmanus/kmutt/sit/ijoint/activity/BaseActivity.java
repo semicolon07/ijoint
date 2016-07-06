@@ -47,6 +47,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+    protected void setupUpButton(){
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
 
     protected void showToast(String message){
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();

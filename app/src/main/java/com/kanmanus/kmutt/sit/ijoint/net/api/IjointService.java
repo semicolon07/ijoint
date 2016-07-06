@@ -1,8 +1,9 @@
 package com.kanmanus.kmutt.sit.ijoint.net.api;
 
 import com.kanmanus.kmutt.sit.ijoint.fix.URL;
-import com.kanmanus.kmutt.sit.ijoint.models.SignInResponse;
 import com.kanmanus.kmutt.sit.ijoint.models.Task;
+import com.kanmanus.kmutt.sit.ijoint.models.response.AllTreatmentResponse;
+import com.kanmanus.kmutt.sit.ijoint.models.response.SignInResponse;
 
 import java.util.List;
 
@@ -19,6 +20,14 @@ public interface IjointService {
     @FormUrlEncoded
     @POST(URL.SIGN_IN)
     Observable<SignInResponse> signIn(@Field("username") String userName, @Field("password") String password);
+
+    @FormUrlEncoded
+    @POST(URL.GET_ALL_TREATMENT)
+    Observable<AllTreatmentResponse> getAllTreatment(@Field("pid") String pId);
+
+    @FormUrlEncoded
+    @POST(URL.GET_TASKS_BY_TREATMENT)
+    Observable<List<Task>> getTasksByTreatment(@Field("treatment_no") String pId);
 
     @FormUrlEncoded
     @POST(URL.GET_TASK)

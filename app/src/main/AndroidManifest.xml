@@ -5,6 +5,11 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".MyApplication"
@@ -12,13 +17,49 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
+        <receiver
+            android:name=".receiver.AlarmReceiver"
+            android:process=":remote" />
+        <receiver android:name=".receiver.StartUpBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".receiver.AlarmIntentService" />
+
         <activity
             android:name=".activity.SignInActivity"
             android:icon="@drawable/ic_launcher_white"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activity.TasksActivity"
+            android:icon="@drawable/ic_launcher_white"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CalibrationActivity"
+            android:icon="@drawable/ic_launcher_white"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PerformActivity"
+            android:icon="@drawable/ic_launcher_white"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PerformABFActivity"
+            android:icon="@drawable/ic_launcher_white"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.ProfileActivity" />
+        <activity
+            android:name=".activity.SplashScreenActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,26 +67,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.TasksActivity"
-            android:icon="@drawable/ic_launcher_white"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait"></activity>
+            android:name=".activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.CalibrationActivity"
-            android:icon="@drawable/ic_launcher_white"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait"></activity>
-        <activity
-            android:name=".activity.PerformActivity"
-            android:icon="@drawable/ic_launcher_white"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait"></activity>
-        <activity
-            android:name=".activity.PerformABFActivity"
-            android:icon="@drawable/ic_launcher_white"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".activity.ProfileActivity"></activity>
+            android:name=".activity.ApplicationSettingActivity"
+            android:label="@string/profile_menu_app_setting" />
+        <activity android:name=".activity.TestSwipeLayoutActivity"></activity>
     </application>
 
 </manifest>

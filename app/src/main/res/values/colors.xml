@@ -20,4 +20,16 @@
     <color name="border_danger">#b33d22</color>
     <color name="danger_hover">#ed6748</color>
     <color name="border_danger_hover">#cf4f31</color>
+
+    <color name="text_enabled">#FFFFFFFF</color>
+    <color name="text_disabled">#4DFFFFFF</color>
+    <color name="icon_enabled">#FFFFFFFF</color>
+    <color name="icon_disabled">#FF63727B</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="red">#FF8083</color>
+    <color name="orange">#FEE378</color>
+
+    <color name="blue_sky">#CCFFFF</color>
+    <color name="pink">#FF99FF</color>
 </resources>

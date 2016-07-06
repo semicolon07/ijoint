@@ -1,6 +1,6 @@
 package com.kanmanus.kmutt.sit.ijoint.datamanager;
 
-import com.kanmanus.kmutt.sit.ijoint.models.SignInResponse;
+import com.kanmanus.kmutt.sit.ijoint.models.response.SignInResponse;
 import com.kanmanus.kmutt.sit.ijoint.net.DefaultSubscriber;
 import com.kanmanus.kmutt.sit.ijoint.net.HttpManager;
 

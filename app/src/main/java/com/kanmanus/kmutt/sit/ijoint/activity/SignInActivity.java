@@ -10,8 +10,8 @@ import com.kanmanus.kmutt.sit.ijoint.MyApplication;
 import com.kanmanus.kmutt.sit.ijoint.R;
 import com.kanmanus.kmutt.sit.ijoint.datamanager.UserDataManager;
 import com.kanmanus.kmutt.sit.ijoint.models.PatientProfileViewModel;
-import com.kanmanus.kmutt.sit.ijoint.models.SignInResponse;
-import com.kanmanus.kmutt.sit.ijoint.models.mapping.SignInResponseMapping;
+import com.kanmanus.kmutt.sit.ijoint.models.response.SignInResponse;
+import com.kanmanus.kmutt.sit.ijoint.models.mapping.ServerResponseMapping;
 import com.kanmanus.kmutt.sit.ijoint.net.DefaultSubscriber;
 
 
@@ -33,11 +33,6 @@ public class SignInActivity extends BaseActivity {
         userDataManager = new UserDataManager();
         userNameEditText = (EditText) findViewById(R.id.et_username);
         passwordEditText = (EditText) findViewById(R.id.et_password);
-
-        if (MyApplication.getInstance().getSession() != null){
-            navigator.navigateToTasks(this);
-            finish();
-        }
     }
 
     public void signIn(View v){
@@ -79,10 +74,10 @@ public class SignInActivity extends BaseActivity {
     }
 
     private void setLoginProfileSession(SignInResponse signInResponse){
-        PatientProfileViewModel viewModel = new SignInResponseMapping().transform(signInResponse);
+        PatientProfileViewModel viewModel = new ServerResponseMapping().transformSignIn(signInResponse);
         MyApplication.getInstance().setSession(viewModel);
 
-        navigator.navigateToTasks(this);
+        navigator.navigateToMain(this);
         finish();
     }
 
