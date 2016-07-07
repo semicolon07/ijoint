@@ -1,14 +1,15 @@
 package com.kanmanus.kmutt.sit.ijoint.fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewStub;
 
 import com.kanmanus.kmutt.sit.ijoint.R;
 
@@ -24,12 +25,14 @@ import eu.davidea.flexibleadapter.items.IFlexible;
 /**
  * Created by Pongpop Inkeaw on 01/01/2016.
  */
-public class TreatmentFragment extends Fragment {
+public class TreatmentFragment extends BaseFragment {
 
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
     @BindView(R.id.swipeRefreshLayout)
     SwipeRefreshLayout swipeRefreshLayout;
+    @BindView(R.id.stub)
+    ViewStub stub;
 
     public TreatmentFragment() {
         super();
@@ -68,10 +71,18 @@ public class TreatmentFragment extends Fragment {
     @SuppressWarnings("UnusedParameters")
     private void initInstances(View rootView, Bundle savedInstanceState) {
         //swipeRefreshLayout.setRefreshing(true);
+        //stub.inflate();
         List<IFlexible> list = new ArrayList<>();
         FlexibleAdapter<IFlexible> adapter = new FlexibleAdapter<IFlexible>(list);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(adapter);
+        stub.inflate();
+        swipeRefreshLayout.post(() -> swipeRefreshLayout.setRefreshing(true));
+        final Handler handler = new Handler();
+        handler.postDelayed(() -> {
+            stub.setVisibility(View.GONE);
+            swipeRefreshLayout.setRefreshing(false);
+        }, 1500);
     }
 
     @Override
