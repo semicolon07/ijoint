@@ -2,6 +2,7 @@ package com.kanmanus.kmutt.sit.ijoint.net.api;
 
 import com.kanmanus.kmutt.sit.ijoint.fix.URL;
 import com.kanmanus.kmutt.sit.ijoint.models.Task;
+import com.kanmanus.kmutt.sit.ijoint.models.TaskHistoryHeaderModel;
 import com.kanmanus.kmutt.sit.ijoint.models.response.AllTreatmentResponse;
 import com.kanmanus.kmutt.sit.ijoint.models.response.SignInResponse;
 
@@ -24,6 +25,14 @@ public interface IjointService {
     @FormUrlEncoded
     @POST(URL.GET_ALL_TREATMENT)
     Observable<AllTreatmentResponse> getAllTreatment(@Field("pid") String pId,@Field("date") String date);
+
+    @FormUrlEncoded
+    @POST(URL.GET_TASK_HISTORY)
+    Observable<List<TaskHistoryHeaderModel>> getTaskHistory(@Field("pid") String pId);
+
+    @FormUrlEncoded
+    @POST(URL.GET_TASK_HISTORY_DETAIL)
+    Observable<List<Task>> getTaskHistoryDetail(@Field("pid") String pId,@Field("date") String date);
 
     @FormUrlEncoded
     @POST(URL.GET_TASKS_BY_TREATMENT)

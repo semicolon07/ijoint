@@ -28,7 +28,20 @@ public class Task {
 
     }
 
-    public Task(String tid, String pid, String date, String side, String target_angle, String number_of_round, String is_abf, String is_synced,String treatmentNo,String perform_datetime) {
+    @Override
+    public String toString() {
+        StringBuffer sb = new StringBuffer();
+        sb.append("tid = "+tid);
+        sb.append(", pid = "+pid);
+        sb.append(", date = "+date);
+        sb.append(", side = "+side);
+        sb.append(", target_angle = "+target_angle);
+        sb.append(", number_of_round = "+number_of_round);
+
+        return sb.toString();
+    }
+
+    public Task(String tid, String pid, String date, String side, String target_angle, String number_of_round, String is_abf, String is_synced, String treatmentNo, String perform_datetime) {
         this.tid = tid;
         this.pid = pid;
         this.date = date;

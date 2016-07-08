@@ -4,10 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.kanmanus.kmutt.sit.ijoint.activity.CalibrationActivity;
+import com.kanmanus.kmutt.sit.ijoint.activity.ExerciseSampleVideoDetailActivity;
 import com.kanmanus.kmutt.sit.ijoint.activity.MainActivity;
 import com.kanmanus.kmutt.sit.ijoint.activity.SignInActivity;
+import com.kanmanus.kmutt.sit.ijoint.activity.TaskHistoryDetailActivity;
 import com.kanmanus.kmutt.sit.ijoint.activity.TasksActivity;
+import com.kanmanus.kmutt.sit.ijoint.models.ExerciseVideoModel;
 import com.kanmanus.kmutt.sit.ijoint.models.Task;
+import com.kanmanus.kmutt.sit.ijoint.models.TaskHistoryHeaderModel;
 import com.kanmanus.kmutt.sit.ijoint.models.TreatmentModel;
 
 /**
@@ -39,6 +43,16 @@ public class Navigator {
 
     public void navigateToCalibration(Context context, Task task) {
         Intent intent = CalibrationActivity.callingIntent(context,task);
+        context.startActivity(intent);
+    }
+
+    public void navigateToHistoryDetail(Context context, TaskHistoryHeaderModel item) {
+        Intent intent = TaskHistoryDetailActivity.callingIntent(context,item);
+        context.startActivity(intent);
+    }
+
+    public void navigateToExerciseVideoDetail(Context context, ExerciseVideoModel item) {
+        Intent intent = ExerciseSampleVideoDetailActivity.callingIntent(context,item);
         context.startActivity(intent);
     }
 }

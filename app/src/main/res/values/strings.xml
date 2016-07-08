@@ -71,4 +71,7 @@
     <string name="task_during_today_treatment_header">Today Task</string>
     <string name="task_during_older_treatment_header">Older Task</string>
 
+    <!--Exercise Video-->
+    <string name="exercise_video_header">Example Video for Patient</string>
+
 </resources>

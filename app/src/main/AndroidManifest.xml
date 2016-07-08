@@ -72,7 +72,15 @@
         <activity
             android:name=".activity.ApplicationSettingActivity"
             android:label="@string/profile_menu_app_setting" />
-        <activity android:name=".activity.TestSwipeLayoutActivity"></activity>
+        <activity android:name=".activity.TestSwipeLayoutActivity" />
+        <activity
+            android:name=".activity.TaskHistoryActivity"
+            android:label="@string/profile_menu_task_history" />
+        <activity
+            android:name=".activity.TaskHistoryDetailActivity"
+            android:label="@string/profile_menu_task_history" />
+        <activity android:name=".activity.ExerciseSampleVideoDetailActivity"
+            android:configChanges="orientation|screenSize"></activity>
     </application>
 
 </manifest>

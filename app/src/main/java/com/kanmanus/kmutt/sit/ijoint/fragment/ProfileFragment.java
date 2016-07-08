@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import com.kanmanus.kmutt.sit.ijoint.MyApplication;
 import com.kanmanus.kmutt.sit.ijoint.R;
 import com.kanmanus.kmutt.sit.ijoint.activity.ApplicationSettingActivity;
+import com.kanmanus.kmutt.sit.ijoint.activity.TaskHistoryActivity;
 import com.kanmanus.kmutt.sit.ijoint.adapter.model.DefaultMenuRecyclerViewItem;
 import com.kanmanus.kmutt.sit.ijoint.adapter.model.ProfileRecyclerViewItem;
 import com.kanmanus.kmutt.sit.ijoint.fix.AppMenu;
@@ -84,7 +85,7 @@ public class ProfileFragment extends Fragment implements DefaultMenuRecyclerView
         profileRecyclerViewItem.setAvatarResId(profileViewModel.getGender() == Gender.MALE ? R.drawable.male_icon : R.drawable.female_icon);
         //Menu
         DefaultMenuRecyclerViewItem applicationSettingMenuItem = new DefaultMenuRecyclerViewItem(getString(R.string.profile_menu_app_setting),R.drawable.ic_settings_applications, AppMenu.APPLICATION_SETTING);
-        DefaultMenuRecyclerViewItem taskHistoryMenuItem = new DefaultMenuRecyclerViewItem(getString(R.string.profile_menu_task_history),R.drawable.ic_history, AppMenu.APPLICATION_SETTING);
+        DefaultMenuRecyclerViewItem taskHistoryMenuItem = new DefaultMenuRecyclerViewItem(getString(R.string.profile_menu_task_history),R.drawable.ic_history, AppMenu.TASK_HISTORY);
         DefaultMenuRecyclerViewItem signOutMenuItem = new DefaultMenuRecyclerViewItem(getString(R.string.profile_menu_sign_out),R.drawable.ic_power_settings_new, AppMenu.SIGN_OUT);
 
         applicationSettingMenuItem.setListener(this);
@@ -118,6 +119,8 @@ public class ProfileFragment extends Fragment implements DefaultMenuRecyclerView
                 getActivity().startActivity(intent);
                 break;
             case TASK_HISTORY:
+                Intent taskHistoryIntent = new Intent(getActivity(), TaskHistoryActivity.class);
+                getActivity().startActivity(taskHistoryIntent);
                 break;
             case SIGN_OUT:
                 MyApplication.getInstance().clearSession();

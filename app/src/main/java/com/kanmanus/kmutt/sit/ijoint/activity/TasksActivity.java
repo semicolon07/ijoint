@@ -135,7 +135,7 @@ public class TasksActivity extends BaseActivity implements TaskRecyclerViewItem.
             taskList.addAll(tasks);
             taskAdapter.notifyDataSetChanged();
             if(taskList.size() == 0){
-                stub.inflate();
+                stub.setVisibility(View.VISIBLE);
             }else{
                 stub.setVisibility(View.GONE);
             }

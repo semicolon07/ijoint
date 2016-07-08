@@ -12,6 +12,7 @@ import com.kanmanus.kmutt.sit.ijoint.db.ResultItemDataSource;
 import com.kanmanus.kmutt.sit.ijoint.db.TaskDataSource;
 import com.kanmanus.kmutt.sit.ijoint.models.ResultItem;
 import com.kanmanus.kmutt.sit.ijoint.models.Task;
+import com.kanmanus.kmutt.sit.ijoint.models.TaskHistoryHeaderModel;
 import com.kanmanus.kmutt.sit.ijoint.models.response.AllTreatmentResponse;
 import com.kanmanus.kmutt.sit.ijoint.net.DefaultSubscriber;
 import com.kanmanus.kmutt.sit.ijoint.net.HttpManager;
@@ -37,6 +38,16 @@ import rx.Subscription;
 public class TreatmentDataManager extends BaseDataManager{
     public Subscription getAllTreatment(String patientId, DefaultSubscriber subscriber){
         Observable<AllTreatmentResponse> call = HttpManager.getInstance().getService().getAllTreatment(patientId, DateTimeUtils.getDate(DateTimeUtils.yyyy_MM_dd));
+        return executeObservable(call,subscriber);
+    }
+
+    public Subscription getTaskHistory(String patientId,DefaultSubscriber subscriber){
+        Observable<List<TaskHistoryHeaderModel>> call = HttpManager.getInstance().getService().getTaskHistory(patientId);
+        return executeObservable(call,subscriber);
+    }
+
+    public Subscription getTaskHistoryDetail(String patientId,String date,DefaultSubscriber subscriber){
+        Observable<List<Task>> call = HttpManager.getInstance().getService().getTaskHistoryDetail(patientId,date);
         return executeObservable(call,subscriber);
     }
 
