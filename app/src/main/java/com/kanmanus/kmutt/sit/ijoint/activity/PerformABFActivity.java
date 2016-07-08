@@ -393,18 +393,15 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
                 json.put("perform_datetime", performDateTime);
                 json.put("result", resultJSONArray);
                 HttpManager.getInstance().getService().uploadResultItems(json.toString()).execute();
-
+                taskDataSource.updateIsSynced(tid, "y");
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            taskDataSource.updateIsSynced(tid, "y");
 
         }
     }
 
     private void goBackToHomePage(){
-        Intent i = new Intent(getApplicationContext(), TasksActivity.class);
-        startActivity(i);
         finish();
     }
 

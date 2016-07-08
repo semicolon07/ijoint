@@ -25,6 +25,9 @@ public enum ServerDbStatus {
     public String getLabel(){
         return label;
     }
+    public String getCode(){
+        return code;
+    }
 
     public static ServerDbStatus transform(String code){
         switch (code){

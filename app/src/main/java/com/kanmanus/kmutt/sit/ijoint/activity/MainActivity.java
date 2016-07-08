@@ -12,10 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.kanmanus.kmutt.sit.ijoint.MyApplication;
 import com.kanmanus.kmutt.sit.ijoint.R;
 import com.kanmanus.kmutt.sit.ijoint.fragment.ExerciseSampleVideoFragment;
 import com.kanmanus.kmutt.sit.ijoint.fragment.ProfileFragment;
 import com.kanmanus.kmutt.sit.ijoint.fragment.TreatmentFragment;
+import com.kanmanus.kmutt.sit.ijoint.models.PatientProfileViewModel;
 import com.kanmanus.kmutt.sit.ijoint.models.TabModel;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItem;
@@ -37,6 +39,7 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.viewpager)
     ViewPager viewpager;
     private ArrayList<TabModel> tabModels;
+    PatientProfileViewModel profileViewModel;
 
     public static Intent callingIntent(Context context) {
         Intent intent = new Intent(context, MainActivity.class);
@@ -48,10 +51,11 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
+        profileViewModel = MyApplication.getInstance().getSession();
         setSupportActionBar(toolbar);
         setupTabLayout();
         getSupportActionBar().setTitle(getString(R.string.tab_treatment));
+        toolbar.setSubtitle(profileViewModel.getFullName());
     }
 
     private void setupTabLayout() {

@@ -32,4 +32,8 @@
 
     <color name="blue_sky">#CCFFFF</color>
     <color name="pink">#FF99FF</color>
+
+    <color name="sync">@color/green</color>
+    <color name="ready">@color/yellow</color>
+    <color name="complete">@color/blue</color>
 </resources>

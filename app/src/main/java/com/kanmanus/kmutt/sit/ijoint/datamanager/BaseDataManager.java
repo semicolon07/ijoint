@@ -8,6 +8,7 @@ import com.kanmanus.kmutt.sit.ijoint.Contextor;
 import com.kanmanus.kmutt.sit.ijoint.net.DefaultSubscriber;
 
 import rx.Observable;
+import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
@@ -16,8 +17,8 @@ import rx.schedulers.Schedulers;
  */
 
 public class BaseDataManager {
-    protected void executeObservable(Observable observable, DefaultSubscriber subscriber){
-        observable.subscribeOn(Schedulers.newThread())
+    protected Subscription executeObservable(Observable observable, DefaultSubscriber subscriber){
+        return observable.subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(subscriber);
     }

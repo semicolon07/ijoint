@@ -1,6 +1,7 @@
 package com.kanmanus.kmutt.sit.ijoint.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.hardware.SensorManager;
 import android.media.AudioManager;
@@ -13,6 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.kanmanus.kmutt.sit.ijoint.R;
 import com.kanmanus.kmutt.sit.ijoint.models.ResultItem;
 import com.kanmanus.kmutt.sit.ijoint.models.Task;
@@ -24,7 +26,16 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 
-public class CalibrationActivity extends Activity implements Orientation.Listener {
+public class CalibrationActivity extends BaseActivity implements Orientation.Listener {
+    private CalibrationTimer calibrationTimer;
+
+    public static Intent callingIntent(Context context, Task task) {
+        Intent intent = new Intent(context,CalibrationActivity.class);
+        intent.putExtra(INTENT_PARAM_TASK,new Gson().toJson(task));
+        return intent;
+    }
+
+    public static final String INTENT_PARAM_TASK = "INTENT_PARAM_TASK";
 
     private Orientation mOrientation;
 
@@ -45,23 +56,28 @@ public class CalibrationActivity extends Activity implements Orientation.Listene
     private ArrayList<ResultItem> resultItems;
     private String exercise_type;
     private String azimuthAngle;
+    private Task task;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calibration);
+        setupUpButton();
 
         mOrientation = new Orientation((SensorManager) getSystemService(Activity.SENSOR_SERVICE),
                 getWindow().getWindowManager());
 
         Intent intent = getIntent();
-        tid = intent.getStringExtra("tid");
-        date = intent.getStringExtra("date");
-        side = intent.getStringExtra("side");
-        targetAngle = intent.getStringExtra("target_angle");
-        numberOfRound = intent.getStringExtra("number_of_round");
-        exercise_type = intent.getStringExtra("exercise_type");
-        isABF = intent.getStringExtra("is_abf");
+        String taskJson = intent.getStringExtra(INTENT_PARAM_TASK);
+        task = new Gson().fromJson(taskJson,Task.class);
+
+        tid = task.tid;
+        date = task.date;
+        side = task.side;
+        targetAngle = task.target_angle;
+        numberOfRound = task.number_of_round;
+        exercise_type = task.exercise_type;
+        isABF = task.is_abf;
 
         df = new DecimalFormat("0.00");
 
@@ -75,6 +91,21 @@ public class CalibrationActivity extends Activity implements Orientation.Listene
         soundPoolMap.put( L_BEEP, soundPool.load(getApplicationContext(), L_BEEP, 1) );
 
         resultItems = new ArrayList<ResultItem>();
+        String side = (task.side.equals("l"))?"Left":"Right";
+        int exerciseTypeRedId = R.string.task_exercise_type_extension;
+        if(task.exercise_type.equals(Task.EXTENSION)){
+            exerciseTypeRedId = R.string.task_exercise_type_extension;
+        }
+        if(task.exercise_type.equals(Task.HORIZONTAL)){
+            exerciseTypeRedId = R.string.task_exercise_type_horizontal_flexion;
+        }
+        if(task.exercise_type.equals(Task.FLEXION)){
+            exerciseTypeRedId = R.string.task_exercise_type_flexion;
+        }
+        String title = side + " Shoulder Exercise" + ((task.is_abf.equals("y"))?" (ABF)":"");
+        String subTitle = getString(exerciseTypeRedId)+", "+task.target_angle + "\u00b0"+", Round "+task.number_of_round;
+        setTitle(title);
+        getSupportActionBar().setSubtitle(subTitle);
     }
 
     @Override
@@ -87,6 +118,8 @@ public class CalibrationActivity extends Activity implements Orientation.Listene
     protected void onPause() {
         super.onPause();
         mOrientation.stopListening();
+        if(calibrationTimer!=null)calibrationTimer.stop();
+
     }
 
     @Override
@@ -123,12 +156,17 @@ public class CalibrationActivity extends Activity implements Orientation.Listene
         Button btn = (Button) v;
         btn.setVisibility(View.GONE);
 
-        new CalibrationTimer(5000, 1000).start();
+        calibrationTimer =new CalibrationTimer(5000, 1000);
+        calibrationTimer.start();
     }
+
+
 
     class CalibrationTimer {
         private long millisInFuture;
         private long countDownInterval;
+        private Runnable counterRunnable;
+        final Handler handler = new Handler();
 
         public CalibrationTimer(long pMillisInFuture, long pCountDownInterval) {
             this.millisInFuture = pMillisInFuture;
@@ -137,8 +175,8 @@ public class CalibrationActivity extends Activity implements Orientation.Listene
 
         public void start() {
             isRecording = true;
-            final Handler handler = new Handler();
-            final Runnable counter = new Runnable(){
+
+            counterRunnable = new Runnable(){
 
                 public void run() {
                     if(millisInFuture <= 0) {
@@ -175,7 +213,10 @@ public class CalibrationActivity extends Activity implements Orientation.Listene
                 }
             };
 
-            handler.postDelayed(counter, countDownInterval);
+            handler.postDelayed(counterRunnable, countDownInterval);
+        }
+        public void stop(){
+            handler.removeCallbacks(counterRunnable);
         }
     }
 

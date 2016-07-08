@@ -23,11 +23,11 @@ public interface IjointService {
 
     @FormUrlEncoded
     @POST(URL.GET_ALL_TREATMENT)
-    Observable<AllTreatmentResponse> getAllTreatment(@Field("pid") String pId);
+    Observable<AllTreatmentResponse> getAllTreatment(@Field("pid") String pId,@Field("date") String date);
 
     @FormUrlEncoded
     @POST(URL.GET_TASKS_BY_TREATMENT)
-    Observable<List<Task>> getTasksByTreatment(@Field("treatment_no") String pId);
+    Call<List<Task>> getTasksByTreatment(@Field("treatment_no") String treatmentNo,@Field("treatment_status") String treatmentStatus,@Field("date") String date);
 
     @FormUrlEncoded
     @POST(URL.GET_TASK)
@@ -39,7 +39,7 @@ public interface IjointService {
 
     @FormUrlEncoded
     @POST(URL.UPLOAD_RESULT_ITEM)
-    Call<String> uploadResultItems(@Field("json") String json);
+    Call<Void> uploadResultItems(@Field("json") String json);
 
     @FormUrlEncoded
     @POST(URL.UPDATE_TASK)

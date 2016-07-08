@@ -14,13 +14,15 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="40dp"
             tools:listitem="@layout/list_item_treatment">
         </android.support.v7.widget.RecyclerView>
     </android.support.v4.widget.SwipeRefreshLayout>
 
     <ViewStub android:id="@+id/stub"
         android:inflatedId="@+id/layout_loading"
-        android:layout="@layout/view_loading"
+        android:layout="@layout/view_cannot_connect_server"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

@@ -5,6 +5,7 @@ import com.kanmanus.kmutt.sit.ijoint.net.DefaultSubscriber;
 import com.kanmanus.kmutt.sit.ijoint.net.HttpManager;
 
 import rx.Observable;
+import rx.Subscription;
 
 /**
  * Created by Semicolon07 on 7/5/2016 AD.
@@ -12,9 +13,9 @@ import rx.Observable;
 
 public class UserDataManager extends BaseDataManager{
 
-    public void login(String userName, String password, DefaultSubscriber subscriber){
+    public Subscription login(String userName, String password, DefaultSubscriber subscriber){
         Observable<SignInResponse> call = HttpManager.getInstance().getService().signIn(userName,password);
-        executeObservable(call,subscriber);
+        return executeObservable(call,subscriber);
     }
 
 

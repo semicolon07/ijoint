@@ -2,6 +2,7 @@ package com.kanmanus.kmutt.sit.ijoint.models;
 
 import com.kanmanus.kmutt.sit.ijoint.models.enumtype.ArmSide;
 import com.kanmanus.kmutt.sit.ijoint.models.enumtype.ServerDbStatus;
+import com.kanmanus.kmutt.sit.ijoint.utils.DateTimeUtils;
 
 import java.util.Date;
 
@@ -23,4 +24,8 @@ public class TreatmentModel {
     private ArmSide armSide;
 
     private int treatmentNo;
+
+    public String getCreateDateText(){
+        return DateTimeUtils.toFormat(createDate,"dd/MM/yyyy");
+    }
 }

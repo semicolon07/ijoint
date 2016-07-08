@@ -29,6 +29,7 @@
     <string name="next">Next</string>
     <string name="setting">Setting</string>
     <string name="uploading">Now Uploading...</string>
+    <string name="cannot_connect_server">Can\'t connect right now.</string>
 
     <!--Main-->
     <string name="tab_treatment">Treatment</string>
@@ -58,5 +59,16 @@
     <!--Notification-->
     <string name="notification_exercise_title">Exercise Title</string>
     <string name="notification_exercise_detail">Exercise Detail</string>
+
+    <!--Task-->
+    <string name="task_complete">COMPLETE</string>
+    <string name="task_ready">READY</string>
+    <string name="task_sync">SYNCED</string>
+    <string name="task_exercise_type_extension">Extension</string>
+    <string name="task_exercise_type_flexion">Flexion</string>
+    <string name="task_exercise_type_horizontal_flexion">Horizontal Flexion</string>
+    <string name="task_new_treatment_header">Record first angle for start Treatment</string>
+    <string name="task_during_today_treatment_header">Today Task</string>
+    <string name="task_during_older_treatment_header">Older Task</string>
 
 </resources>
