@@ -66,6 +66,12 @@ public class ExerciseSampleVideoDetailActivity extends BaseActivity implements E
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        videoPlayer.pause();
+    }
+
+    @Override
     public void onStarted(EasyVideoPlayer player) {
 
     }
@@ -107,7 +113,7 @@ public class ExerciseSampleVideoDetailActivity extends BaseActivity implements E
 
     @Override
     public void onSubmit(EasyVideoPlayer player, Uri source) {
-        player.pause();
-        navigator.navigateToFullScreen(this,exerciseVideoModel.getVideoUri(),player.getCurrentPosition());
+        navigator.navigateToFullScreen(this,source,player.getCurrentPosition());
+        //player.pause();
     }
 }
