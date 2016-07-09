@@ -15,41 +15,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c4505b3-5b5d-4c71-b2f6-6e67884bbe78" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/raw/example_video_01.mp4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/ExerciseSampleVideoDetailActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/TaskHistoryActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/TaskHistoryDetailActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/adapter/model/ExerciseVideoRecyclerViewItem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/adapter/model/TaskHistoryRecyclerViewItem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/datamanager/ExerciseVideoDataManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/models/ExerciseVideoModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/models/TaskHistoryHeaderModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_exercise_sample_video_detail.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_task_history.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_task_history_detail.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_item_sample_video.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_item_task_history.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/BaseActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/BaseActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/TasksActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/TasksActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/adapter/model/AdapterMapping.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/adapter/model/AdapterMapping.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/datamanager/TreatmentDataManager.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/datamanager/TreatmentDataManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fix/Navigator.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fix/Navigator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/ExerciseSampleVideoDetailActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/ExerciseSampleVideoDetailActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fix/URL.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fix/URL.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fragment/ExerciseSampleVideoFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fragment/ExerciseSampleVideoFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fragment/ProfileFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fragment/ProfileFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/models/Task.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/models/Task.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/net/api/IjointService.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/net/api/IjointService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_tasks.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_tasks.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_sample_exercise_video.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_sample_exercise_video.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <ignored path="ijoint.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,37 +57,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TasksActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/TasksActivity.java">
+      <file leaf-file-name="ExerciseSampleVideoDetailActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/ExerciseSampleVideoDetailActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_exercise_sample_video_detail.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_exercise_sample_video_detail.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+            <state relative-caret-position="232">
+              <caret line="36" column="54" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
               <folding>
-                <element signature="e#884#919#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -1922,7 +1872,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/adapter/model/TaskHistoryRecyclerViewItem.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item_task_history.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/BaseActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fix/URL.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/net/api/IjointService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/TaskHistoryActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/models/Task.java" />
@@ -1937,8 +1886,9 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/datamanager/ExerciseVideoDataManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_exercise_sample_video_detail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/ExerciseSampleVideoDetailActivity.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fix/URL.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/ExerciseSampleVideoDetailActivity.java" />
       </list>
     </option>
   </component>
@@ -1972,32 +1922,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="AndroidView">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ijoint" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gradle Scripts" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ijoint" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2018,7 +1942,83 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ijoint" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ijoint" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ijoint" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ijoint" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ijoint" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ijoint" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ijoint" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2031,7 +2031,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.NlPaletteManager-NlPreviewForm.SHOW" value="false" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
-    <property name="SearchEverywhereHistoryKey" value="Tasks&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/TasksActivity.java&#10;list_item_ta&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/res/layout/list_item_task_history.xml&#10;Treat&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fragment/TreatmentFragment.java&#10;strings&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/res/values/strings.xml&#10;Task&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/models/Task.java&#10;Treatment&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fragment/TreatmentFragment.java&#10;Http&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/net/HttpManager.java&#10;HttpM&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/net/HttpManager.java&#10;Cal&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/CalibrationActivity.java&#10;string&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/res/values/strings.xml&#10;color&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/res/values/colors.xml&#10;Ij&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/net/api/IjointService.java&#10;Main&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/MainActivity.java&#10;listh&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/res/layout/list_item_header.xml&#10;list&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/res/layout/list_item_header.xml&#10;IJoin&#9;PSI&#9;JAVA://com.kanmanus.kmutt.sit.ijoint.net.api.IjointService&#10;strin&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/res/values/strings.xml&#10;MainA&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/MainActivity.java&#10;stringa&#9;PSI&#9;JAVA://com.sun.corba.se.spi.orb.OperationFactory.StringAction&#10;stri&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/res/values/strings.xml&#10;navi&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fix/Navigator.java&#10;Si&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/SignInActivity.java&#10;Pat&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/models/PatientProfileViewModel.java&#10;URL&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fix/URL.java&#10;TaskA&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/TasksActivity.java" />
+    <property name="SearchEverywhereHistoryKey" value="Ij&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/net/api/IjointService.java&#10;Tasks&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/TasksActivity.java&#10;list_item_ta&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/res/layout/list_item_task_history.xml&#10;Treat&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fragment/TreatmentFragment.java&#10;strings&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/res/values/strings.xml&#10;Task&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/models/Task.java&#10;Treatment&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fragment/TreatmentFragment.java&#10;Http&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/net/HttpManager.java&#10;HttpM&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/net/HttpManager.java&#10;Cal&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/CalibrationActivity.java&#10;string&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/res/values/strings.xml&#10;color&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/res/values/colors.xml&#10;Main&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/MainActivity.java&#10;listh&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/res/layout/list_item_header.xml&#10;list&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/res/layout/list_item_header.xml&#10;IJoin&#9;PSI&#9;JAVA://com.kanmanus.kmutt.sit.ijoint.net.api.IjointService&#10;strin&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/res/values/strings.xml&#10;MainA&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/MainActivity.java&#10;stringa&#9;PSI&#9;JAVA://com.sun.corba.se.spi.orb.OperationFactory.StringAction&#10;stri&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/res/values/strings.xml&#10;navi&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fix/Navigator.java&#10;Si&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/SignInActivity.java&#10;Pat&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/models/PatientProfileViewModel.java&#10;URL&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fix/URL.java&#10;TaskA&#9;FILE&#9;file:///Users/Semicolon07/Development/Workspace/AndroidStudioWorkspace/ijoint/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/TasksActivity.java" />
     <property name="asset" value="rO0ABXNyADxkZS5tcHJlbmdlbWFubi5pbnRlbGxpai5wbHVnaW4uYW5kcm9pZGljb25zLm1vZGVsLkltYWdlQXNzZXQl990GqIfF7gIABkwACGNhdGVnb3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAGY29sb3JzdAAQTGphdmEvdXRpbC9MaXN0O0wABG5hbWVxAH4AAUwABHBhY2txAH4AAUwAC3Jlc29sdXRpb25zcQB+AAJMAAVzaXplc3EAfgACeHB0AARmaWxlc3IAE2phdmEudXRpbC5BcnJheUxpc3R4gdIdmcdhnQMAAUkABHNpemV4cAAAAAJ3BAAAAAJ0AAVibGFja3QABXdoaXRleHQADGljX2Nsb3VkX29mZnQADm1hdGVyaWFsX2ljb25zc3EAfgAFAAAABncEAAAABn5yADxkZS5tcHJlbmdlbWFubi5pbnRlbGxpai5wbHVnaW4uYW5kcm9pZGljb25zLm1vZGVsLlJlc29sdXRpb24AAAAAAAAAABIAAHhyAA5qYXZhLmxhbmcuRW51bQAAAAAAAAAAEgAAeHB0AAZBTllEUEl+cQB+AAx0AARIRFBJfnEAfgAMdAAETURQSX5xAH4ADHQABVhIRFBJfnEAfgAMdAAGWFhIRFBJfnEAfgAMdAAHWFhYSERQSXhzcQB+AAUAAAAEdwQAAAAEdAAEMThkcHQABDI0ZHB0AAQzNmRwdAAENDhkcHg=" />
     <property name="color" value="white" />
     <property name="size" value="36dp" />
@@ -2422,17 +2422,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="1280" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2494929" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2494929" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2442,13 +2441,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14376996" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2456,8 +2454,10 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2515,12 +2515,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
           <caret line="142" column="22" selection-start-line="142" selection-start-column="22" selection-end-line="142" selection-end-column="22" />
-          <folding>
-            <element signature="e#4794#4800#0" expanded="true" />
-            <element signature="e#5361#5367#0" expanded="true" />
-            <element signature="e#6133#6139#0" expanded="true" />
-            <element signature="e#7873#7879#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2583,14 +2577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="81" column="39" selection-start-line="81" selection-start-column="39" selection-end-line="81" selection-end-column="39" />
-          <folding>
-            <element signature="e#3265#3302#0" expanded="true" />
-            <element signature="e#3391#3428#0" expanded="true" />
-            <element signature="e#3528#3574#0" expanded="true" />
-            <element signature="e#3671#3706#0" expanded="true" />
-            <element signature="e#7802#7803#0" expanded="true" />
-            <element signature="e#7866#7867#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2598,7 +2584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-62">
           <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2614,9 +2599,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-26">
           <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2635,7 +2617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="733">
           <caret line="121" column="88" selection-start-line="121" selection-start-column="88" selection-end-line="121" selection-end-column="88" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2665,7 +2646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2673,11 +2653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#445#446#0" expanded="false" />
-            <element signature="e#509#510#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2685,7 +2660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2693,7 +2667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="49" column="5" selection-start-line="37" selection-start-column="4" selection-end-line="49" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2701,9 +2674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="58" column="57" selection-start-line="58" selection-start-column="57" selection-end-line="58" selection-end-column="57" />
-          <folding>
-            <element signature="e#2386#2427#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2722,9 +2692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
           <caret line="136" column="17" selection-start-line="136" selection-start-column="17" selection-end-line="136" selection-end-column="17" />
-          <folding>
-            <element signature="e#5938#5978#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2733,18 +2700,10 @@
         <state relative-caret-position="810">
           <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1732#1733#0" expanded="true" />
-            <element signature="e#1762#1763#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1732#1733#0" expanded="false" />
+            <element signature="e#1762#1763#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fix/URL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2789,14 +2748,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/net/api/IjointService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/TaskHistoryActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
@@ -2811,7 +2762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2842,7 +2792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2850,9 +2799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
           <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2860,7 +2806,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7">
           <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2887,7 +2832,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
           <caret line="91" column="41" selection-start-line="91" selection-start-column="41" selection-end-line="91" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2910,19 +2854,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/TasksActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/datamanager/ExerciseVideoDataManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2930,7 +2865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="628">
           <caret line="65" column="111" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="111" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2938,39 +2872,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="785">
           <caret line="82" column="58" selection-start-line="82" selection-start-column="58" selection-end-line="82" selection-end-column="58" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_exercise_sample_video_detail.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
-          <folding>
-            <element signature="e#884#919#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/fm.jiecao/jiecaovideoplayer/3.6.2/1e085d1c502d167c91fbc3f8e3f44e06961c19e3/jiecaovideoplayer-3.6.2-sources.jar!/fm/jiecao/jcvideoplayer_lib/JCMediaManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="763">
           <caret line="250" column="8" selection-start-line="250" selection-start-column="8" selection-end-line="250" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2978,7 +2897,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2986,17 +2904,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="137" column="17" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/fix/URL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/ExerciseSampleVideoDetailActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/net/api/IjointService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="135">
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3005,6 +2928,35 @@
         <state relative-caret-position="313">
           <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/TasksActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_exercise_sample_video_detail.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kanmanus/kmutt/sit/ijoint/activity/ExerciseSampleVideoDetailActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="36" column="54" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

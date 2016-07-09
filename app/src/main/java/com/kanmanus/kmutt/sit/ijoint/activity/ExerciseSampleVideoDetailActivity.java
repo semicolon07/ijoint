@@ -42,7 +42,8 @@ public class ExerciseSampleVideoDetailActivity extends BaseActivity {
 
         String json = getIntent().getStringExtra(INTENT_PARAM_MODEL);
         exerciseVideoModel = new Gson().fromJson(json, ExerciseVideoModel.class);
-        exerciseVideoModel.setVideoUri(getResouceUriName(exerciseVideoModel.getVideoFileName()));
+        exerciseVideoModel.setVideoUri(getResourceUriName(exerciseVideoModel.getVideoFileName()));
+        setTitle(exerciseVideoModel.getName());
         nameTextView.setText(exerciseVideoModel.getName());
         descTextView.setText(exerciseVideoModel.getDescription());
 
@@ -53,7 +54,7 @@ public class ExerciseSampleVideoDetailActivity extends BaseActivity {
         videoView.setMediaController(vidControl);
     }
 
-    public Uri getResouceUriName(String fileName){
+    public Uri getResourceUriName(String fileName){
         int rawFile = R.raw.example_video_01;
         Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + rawFile);
         return uri;
