@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.kanmanus.kmutt.sit.ijoint.models.ResultItem;
 
@@ -112,9 +113,8 @@ public class ResultItemDataSource {
         List<ResultItem> elems = new ArrayList<ResultItem>();
 
         Cursor cursor = database.query(TABLE, allColumns,
-                MySQLiteHelper.COL_RESULT_ITEM_TASK_ID + " = " + tid,
+                MySQLiteHelper.COL_RESULT_ITEM_TASK_ID + " = '" + tid +"'",
                 null, null, null, null);
-
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             ResultItem elem = cursorToElement(cursor);

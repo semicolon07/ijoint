@@ -15,7 +15,8 @@ public class ResultItem {
     public String azimuth;
     public String pitch;
     public String roll;
-
+    public String magneticRoll;
+    public String calibate;
     public ResultItem(String tid, String angle) {
         this.tid = tid;
         this.angle = angle;
@@ -47,5 +48,45 @@ public class ResultItem {
 
         }
         return obj;
+    }
+
+    public String getCalibate() {
+        return calibate;
+    }
+
+    public void setCalibate(String calibate) {
+        this.calibate = calibate;
+    }
+
+    public String getAzimuth() {
+        return azimuth;
+    }
+
+    public void setAzimuth(String azimuth) {
+        this.azimuth = azimuth;
+    }
+
+    public String getPitch() {
+        return pitch;
+    }
+
+    public void setPitch(String pitch) {
+        this.pitch = pitch;
+    }
+
+    public String getRoll() {
+        return roll;
+    }
+
+    public void setRoll(String roll) {
+        this.roll = roll;
+    }
+
+    public String getMagneticRoll() {
+        return magneticRoll;
+    }
+
+    public void setMagneticRoll(String magneticRoll) {
+        this.magneticRoll = magneticRoll;
     }
 }

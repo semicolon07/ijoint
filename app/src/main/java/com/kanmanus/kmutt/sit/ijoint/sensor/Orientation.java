@@ -1,36 +1,40 @@
 
 package com.kanmanus.kmutt.sit.ijoint.sensor;
 
+import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.util.Log;
-import android.view.Surface;
 import android.view.WindowManager;
+
 
 public class Orientation implements SensorEventListener {
 
+  private float screenRotation;
+
   public interface Listener {
-    void onOrientationChanged(float azimuth, float pitch, float roll);
+    void onOrientationChanged(float azimuth, float pitch, float roll ,float magneticRoll);
   }
 
-  private static final int SENSOR_DELAY_MICROS = 100 * 1000; // 50ms
+  private static final int SENSOR_DELAY_MICROS = 100 * 1000; // 10ms
 
   private final SensorManager mSensorManager;
-  private final Sensor mRotationSensor;
   private final WindowManager mWindowManager;
-
+//  private final Sensor mOrientationSensor;
+  //private final Sensor mMagneticSensor;
+  private final Sensor mRotateMatrix;
   private int mLastAccuracy;
   private Listener mListener;
 
   public Orientation(SensorManager sensorManager, WindowManager windowManager) {
     mSensorManager = sensorManager;
     mWindowManager = windowManager;
-
     // Can be null if the sensor hardware is not available
-    //mRotationSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
-    mRotationSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
+   // mOrientationSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
+   // mMagneticSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+    mRotateMatrix = mSensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
   }
 
   public void startListening(Listener listener) {
@@ -38,11 +42,9 @@ public class Orientation implements SensorEventListener {
       return;
     }
     mListener = listener;
-    if (mRotationSensor == null) {
-      Log.w(">>", "Rotation vector sensor not available; will not provide orientation data.");
-      return;
-    }
-    mSensorManager.registerListener(this, mRotationSensor, SENSOR_DELAY_MICROS);
+  //  mSensorManager.registerListener(this, mOrientationSensor, SENSOR_DELAY_MICROS);
+    mSensorManager.registerListener(this,mRotateMatrix,SENSOR_DELAY_MICROS);
+   // mSensorManager.registerListener(this, mMagneticSensor, SENSOR_DELAY_MICROS);
   }
 
   public void stopListening() {
@@ -65,49 +67,36 @@ public class Orientation implements SensorEventListener {
     if (mLastAccuracy == SensorManager.SENSOR_STATUS_UNRELIABLE) {
       return;
     }
-    if (event.sensor == mRotationSensor) {
-      updateOrientation(event.values);
-    }
+//    if (event.sensor == mOrientationSensor) {
+//      setOrientation(event.values,screenRotation);
+//    }
+//    if(event.sensor == mMagneticSensor){
+//      screenRotation = event.values[2];
+//    }
+    if(event.sensor == mRotateMatrix){
+      float[] rMatrix = new float[9];
+      float[] orientationMatrix = new float[9];
+
+      SensorManager.getRotationMatrixFromVector(rMatrix, event.values);
+      SensorManager.getOrientation(rMatrix, orientationMatrix);
+      setOrientation(orientationMatrix);
+     }
   }
 
-  private void updateOrientation(float[] rotationVector) {
-    float[] rotationMatrix = new float[9];
-    SensorManager.getRotationMatrixFromVector(rotationMatrix, rotationVector);
+  private void setOrientation(float[] orientationMatrix){
+    float azimuth = (float)(Math.toDegrees((orientationMatrix[0])) + 180.0);
+    float pitch = (float)(Math.toDegrees(orientationMatrix[1]));
+    float roll = (float)(Math.toDegrees(orientationMatrix[2]));
 
-    // By default, remap the axes as if the front of the
-    // device screen was the instrument panel.
-    int worldAxisForDeviceAxisX = SensorManager.AXIS_X;
-    int worldAxisForDeviceAxisY = SensorManager.AXIS_Z;
-
-    // Adjust the rotation matrix for the device orientation
-    int screenRotation = mWindowManager.getDefaultDisplay().getRotation();
-    if (screenRotation == Surface.ROTATION_0) {
-      worldAxisForDeviceAxisX = SensorManager.AXIS_X;
-      worldAxisForDeviceAxisY = SensorManager.AXIS_Z;
-    } else if (screenRotation == Surface.ROTATION_90) {
-      worldAxisForDeviceAxisX = SensorManager.AXIS_Z;
-      worldAxisForDeviceAxisY = SensorManager.AXIS_MINUS_X;
-    } else if (screenRotation == Surface.ROTATION_180) {
-      worldAxisForDeviceAxisX = SensorManager.AXIS_MINUS_X;
-      worldAxisForDeviceAxisY = SensorManager.AXIS_MINUS_Z;
-    } else if (screenRotation == Surface.ROTATION_270) {
-      worldAxisForDeviceAxisX = SensorManager.AXIS_MINUS_Z;
-      worldAxisForDeviceAxisY = SensorManager.AXIS_X;
-    }
-
-    float[] adjustedRotationMatrix = new float[9];
-    SensorManager.remapCoordinateSystem(rotationMatrix, worldAxisForDeviceAxisX,
-        worldAxisForDeviceAxisY, adjustedRotationMatrix);
-
-    // Transform rotation matrix into azimuth/pitch/roll
-    float[] orientation = new float[3];
-    SensorManager.getOrientation(adjustedRotationMatrix, orientation);
-
-    // Convert radians to degrees
-    float azimuth = orientation[0] * -57;
-    float pitch = orientation[1] * -57;
-    float roll = orientation[2] * -57;
-
-    mListener.onOrientationChanged(azimuth, pitch, roll);
+    mListener.onOrientationChanged(azimuth, pitch, roll,pitch);
   }
+
+//  private void setOrientation(float[] orientationMatrix, float magneticRoll){
+//    float azimuth = orientationMatrix[0];
+//    float pitch = orientationMatrix[1];
+//    float roll = orientationMatrix[2];
+//
+//    mListener.onOrientationChanged(azimuth, pitch, roll,magneticRoll);
+//  }
+
 }
