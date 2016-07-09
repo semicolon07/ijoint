@@ -79,8 +79,12 @@
         <activity
             android:name=".activity.TaskHistoryDetailActivity"
             android:label="@string/profile_menu_task_history" />
-        <activity android:name=".activity.ExerciseSampleVideoDetailActivity"
-            android:configChanges="orientation|screenSize"></activity>
+        <activity
+            android:name=".activity.ExerciseSampleVideoDetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenLayout|screenSize" />
+        <activity android:name=".activity.FullScreenVideoActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation|keyboardHidden|screenLayout|screenSize"></activity>
     </application>
 
 </manifest>

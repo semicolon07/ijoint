@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_full_screen_video"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.kanmanus.kmutt.sit.ijoint.activity.FullScreenVideoActivity">
+    <com.afollestad.easyvideoplayer.EasyVideoPlayer
+        android:id="@+id/videoPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:evp_autoFullscreen="true"
+        app:evp_autoPlay="true"
+        app:evp_customLabelText="Hello!"
+        app:evp_disableControls="false"
+        app:evp_hideControlsOnPlay="true"
+        app:evp_leftAction="restart"
+        app:evp_pauseDrawable="@drawable/evp_action_pause"
+        app:evp_playDrawable="@drawable/evp_action_play"
+        app:evp_restartDrawable="@drawable/evp_action_restart"
+        app:evp_retryText="@string/evp_retry"
+        app:evp_rightAction="none" />
+</LinearLayout>

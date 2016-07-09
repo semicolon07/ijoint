@@ -2,9 +2,11 @@ package com.kanmanus.kmutt.sit.ijoint.fix;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 
 import com.kanmanus.kmutt.sit.ijoint.activity.CalibrationActivity;
 import com.kanmanus.kmutt.sit.ijoint.activity.ExerciseSampleVideoDetailActivity;
+import com.kanmanus.kmutt.sit.ijoint.activity.FullScreenVideoActivity;
 import com.kanmanus.kmutt.sit.ijoint.activity.MainActivity;
 import com.kanmanus.kmutt.sit.ijoint.activity.SignInActivity;
 import com.kanmanus.kmutt.sit.ijoint.activity.TaskHistoryDetailActivity;
@@ -53,6 +55,11 @@ public class Navigator {
 
     public void navigateToExerciseVideoDetail(Context context, ExerciseVideoModel item) {
         Intent intent = ExerciseSampleVideoDetailActivity.callingIntent(context,item);
+        context.startActivity(intent);
+    }
+
+    public void navigateToFullScreen(Context context, Uri videoUri,int videoPosition) {
+        Intent intent = FullScreenVideoActivity.callingIntent(context,videoUri,videoPosition);
         context.startActivity(intent);
     }
 }
