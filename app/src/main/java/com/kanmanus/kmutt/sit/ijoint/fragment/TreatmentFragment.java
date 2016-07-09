@@ -136,7 +136,7 @@ public class TreatmentFragment extends BaseFragment
 
         @Override
         public void onError(Throwable e) {
-            //showError(e);
+            showError(e);
             showRetryConnect(e, onRetryConnectClickListener);
             swipeRefreshLayout.setRefreshing(false);
         }
@@ -164,6 +164,11 @@ public class TreatmentFragment extends BaseFragment
             treatmentList.addAll(convert(duringTreatments));
         }
         adapter.notifyDataSetChanged();
+        if(treatmentList.size() == 0){
+            stub.setVisibility(View.VISIBLE);
+        }else{
+            stub.setVisibility(View.GONE);
+        }
     }
 
     public List<TreatmentRecyclerViewItem> convert(List<TreatmentResponse> models) {
