@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.VideoView;
 
@@ -55,12 +56,20 @@ public class ExerciseSampleVideoDetailActivity extends BaseActivity implements E
         vidControl.setAnchorView(videoView);
 
         videoView.setMediaController(vidControl);*/
-        videoPlayer.setCallback(this);
-        videoPlayer.setSource(exerciseVideoModel.getVideoUri());
+        if(exerciseVideoModel.getVideoUri() == null){
+            showToast("Video not found");
+            videoPlayer.setVisibility(View.GONE);
+        }else{
+            videoPlayer.setCallback(this);
+            videoPlayer.setSource(exerciseVideoModel.getVideoUri());
+        }
+
     }
 
     public Uri getResourceUriName(String fileName) {
-        int rawFile = R.raw.example_video_01;
+        int rawFile = getResources().getIdentifier(fileName,"raw",getPackageName());
+        if(rawFile == 0) return null;
+
         Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + rawFile);
         return uri;
     }
