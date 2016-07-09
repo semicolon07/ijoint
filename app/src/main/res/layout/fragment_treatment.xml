@@ -22,7 +22,7 @@
 
     <ViewStub android:id="@+id/stub"
         android:inflatedId="@+id/layout_loading"
-        android:layout="@layout/view_cannot_connect_server"
+        android:layout="@layout/view_no_treatment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
