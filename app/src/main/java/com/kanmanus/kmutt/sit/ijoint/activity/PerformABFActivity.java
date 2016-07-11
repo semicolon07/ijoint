@@ -270,9 +270,9 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
                         score++;
                         EXERCISE_STATE = EXERCISE_SUCCESS;
                     }
-                    targetAngle = ""+(Double.parseDouble(targetAngle)+5);
+                    //targetAngle = ""+(Double.parseDouble(targetAngle)+5);
 
-                    EXERCISE_INCREASE = EXERCISE_SUCCESS;
+                    //EXERCISE_INCREASE = EXERCISE_SUCCESS;
                 }
                 if (EXERCISE_STATE.equals(EXERCISE_SUCCESS) && Double.parseDouble(angleStr) < 5) {
                     tvNumberOfRound.setText(score + "/" + numberOfRound);
@@ -290,7 +290,7 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
 //                        new UploadToWeb().execute();
 //                    }
                     EXERCISE_STATE = EXERCISE_START;
-                    EXERCISE_INCREASE = EXERCISE_START;
+                    //EXERCISE_INCREASE = EXERCISE_START;
                 }
 //            }else{
 //                if(isABF.equals(YES) && EXERCISE_ERROR.equals(NO)){
