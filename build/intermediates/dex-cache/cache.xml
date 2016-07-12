@@ -2,6 +2,7 @@
 <items version="2" >
 
     <item
+<<<<<<< HEAD
         is-multidex="false"
         jar="C:\Users\Phetkhung\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.2\f1bc476cc167b18e66c297df599b2377131a8947\gson-2.6.2.jar"
         jumboMode="false"
@@ -22,9 +23,19 @@
     <item
         is-multidex="false"
         jar="D:\Work\Android\ijoint\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.0.0\jars\classes.jar"
+=======
+        jar="/Users/Nuntiya/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.1.0/2de7cd8b95b7021b1d597f049bcb422055119f2c/retrofit-2.1.0.jar"
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/retrofit-2.1.0_665efa313e5cb22524a0043bba2b890eec03ce88.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
+>>>>>>> upstream/master
+        jumboMode="false"
+        revision="24.0.0"
+<<<<<<< HEAD
         sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.0.0_dbf82f0200a44dd4d4e23b166167434588d9ed20.jar" />
     </item>
@@ -49,198 +60,379 @@
     <item
         is-multidex="false"
         jar="C:\Users\Phetkhung\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.3.1\19047bdb6a4fc00a44124f64ca98e88fc204e7e3\okhttp-3.3.1.jar"
+=======
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.4.0_bb39bde8e831898691eb508fa3ca6bf90c694bf6.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.4.0/jars/classes.jar"
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+        sha1="d9ecde39b460470e655de6e47c05573d2d5a8bfb">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-23.4.0_3be1bf5752506c59154c7e8aef1d8b3d0cff52a0.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/exploded-aar/com.ogaclejapan.smarttablayout/library/1.6.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.0"
+        sha1="1d16ffcc50b1dfa726cf978ea9f0a949cdd70e7d">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/com.ogaclejapan.smarttablayout-library-1.6.1_8145950371af75a6365a17c3fb954ac9b66a6ff3.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/exploded-aar/de.hdodenhof/circleimageview/2.0.0/jars/classes.jar"
+>>>>>>> upstream/master
+        jumboMode="false"
+        revision="24.0.0"
+<<<<<<< HEAD
         sha1="19047bdb6a4fc00a44124f64ca98e88fc204e7e3">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\okhttp-3.3.1_609031c654d75b08d6360876b84e8432728e9ee3.jar" />
     </item>
     <item
         is-multidex="false"
         jar="C:\Users\Phetkhung\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.1.0\d6854f42bfb4098d3d2358d93201307b9f1cc95d\butterknife-annotations-8.1.0.jar"
+=======
+        sha1="031e8b3ab2df4ab43b1017f84417d7e10dfbb8d2">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/de.hdodenhof-circleimageview-2.0.0_0d17adb32c306d997b1c5221822975e7777cc317.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/jars/classes.jar"
+>>>>>>> upstream/master
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+<<<<<<< HEAD
         sha1="d6854f42bfb4098d3d2358d93201307b9f1cc95d">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\butterknife-annotations-8.1.0_63a0b7369eb238f4b61c3012d1f9e1fb0a05c2b0.jar" />
     </item>
     <item
         is-multidex="false"
         jar="D:\Work\Android\ijoint\app\build\intermediates\exploded-aar\com.ogaclejapan.smarttablayout\library\1.6.1\jars\classes.jar"
+=======
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.4.0_703c194b7692d8467ceceda15d241624571f82bc.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/exploded-aar/com.ogaclejapan.smarttablayout/utils-v4/1.6.1/jars/classes.jar"
+>>>>>>> upstream/master
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+<<<<<<< HEAD
         sha1="1d16ffcc50b1dfa726cf978ea9f0a949cdd70e7d">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\com.ogaclejapan.smarttablayout-library-1.6.1_be68763b71d728432032a51e4bef57443502e0c7.jar" />
     </item>
     <item
         is-multidex="false"
         jar="D:\Work\Android\ijoint\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\2.0.0\jars\classes.jar"
+=======
+        sha1="7dc4e0ea5b06183f6b32f08c5db6bcb6ef79c02a">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/com.ogaclejapan.smarttablayout-utils-v4-1.6.1_653348e351ac93d2f1d8a2d3c6695fe208f05cde.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+>>>>>>> upstream/master
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+<<<<<<< HEAD
         sha1="031e8b3ab2df4ab43b1017f84417d7e10dfbb8d2">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\de.hdodenhof-circleimageview-2.0.0_c402cd04dfc99e2a8dba54ba5c570b41f3006554.jar" />
     </item>
     <item
         is-multidex="false"
         jar="C:\Users\Phetkhung\.gradle\caches\modules-2\files-2.1\com.jakewharton.hugo\hugo-annotations\1.2.1\b01150795c5cdca1eb7e501bf00f105ff0e31501\hugo-annotations-1.2.1.jar"
+=======
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0_1516b2a91128035a67a1f5ce2a1793e8b378343b.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/24.0.0/2943c74db6d4346ab8c6531adac91fa05c137c40/support-annotations-24.0.0.jar"
+>>>>>>> upstream/master
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+<<<<<<< HEAD
         sha1="b01150795c5cdca1eb7e501bf00f105ff0e31501">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\hugo-annotations-1.2.1_108e1be577b7a02dc1ad3017cb3217e3e53cfba3.jar" />
     </item>
     <item
         is-multidex="false"
         jar="D:\Work\Android\ijoint\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\jars\classes.jar"
+=======
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/support-annotations-24.0.0_cd9031a8c5fed0a0cd6f1a003a8326cea815acf8.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/jars/classes.jar"
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.0.0_09f8cda45e584c70e97ce303fbedde8f7691cff0.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/adapter-rxjava/2.1.0/693eddc23e87ab13f9cf5001707ce8e7e1d1ff01/adapter-rxjava-2.1.0.jar"
+>>>>>>> upstream/master
+        jumboMode="false"
+        revision="24.0.0"
+<<<<<<< HEAD
         sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.4.0_fbb47d75e8dcdf3b78d2b389d6daf178da7d1385.jar" />
     </item>
     <item
         is-multidex="false"
         jar="D:\Work\Android\ijoint\app\build\intermediates\exploded-aar\com.android.support\preference-v7\23.4.0\jars\classes.jar"
+=======
+        sha1="693eddc23e87ab13f9cf5001707ce8e7e1d1ff01">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/adapter-rxjava-2.1.0_0a6d9615d3e3f2098f318ac6e923946c335084d7.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.6.2/f1bc476cc167b18e66c297df599b2377131a8947/gson-2.6.2.jar"
+>>>>>>> upstream/master
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+<<<<<<< HEAD
         sha1="b954d8588de65c67c1ec482678620845bbb5f737">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\com.android.support-preference-v7-23.4.0_49341f9ce354ae5578a3f00df0c3f570364c3cb0.jar" />
     </item>
     <item
         is-multidex="false"
         jar="D:\Work\Android\ijoint\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\classes.jar"
+=======
+        sha1="f1bc476cc167b18e66c297df599b2377131a8947">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/gson-2.6.2_f53e1656df5f0cd33851dc421ad72e32842bb8af.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.3.1/19047bdb6a4fc00a44124f64ca98e88fc204e7e3/okhttp-3.3.1.jar"
+>>>>>>> upstream/master
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+<<<<<<< HEAD
         sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.0.0_e3f462c2771cf0d0a40740f2dd53e8410a4d2f87.jar" />
     </item>
     <item
         is-multidex="false"
         jar="C:\Users\Phetkhung\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\adapter-rxjava\2.1.0\693eddc23e87ab13f9cf5001707ce8e7e1d1ff01\adapter-rxjava-2.1.0.jar"
+=======
+        sha1="19047bdb6a4fc00a44124f64ca98e88fc204e7e3">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/okhttp-3.3.1_a87bf5c067c3c5fcad2afe0d7bb5ac3da316d1ad.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.1.0/jars/classes.jar"
+>>>>>>> upstream/master
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+<<<<<<< HEAD
         sha1="693eddc23e87ab13f9cf5001707ce8e7e1d1ff01">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\adapter-rxjava-2.1.0_c82f22aa964dbf788e4f04a28a3078fef3fea921.jar" />
     </item>
     <item
         is-multidex="false"
         jar="D:\Work\Android\ijoint\app\build\intermediates\exploded-aar\com.github.silvestrpredko\dot-progress-bar\0.1.4\jars\classes.jar"
+=======
+        sha1="d4ab8678882571a0a6f19c47a826ecbce5b4f42b">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/com.jakewharton-butterknife-8.1.0_41a5bd782c0cdcb8a019c89a64c710f96f0d71ee.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/exploded-aar/me.zhanghai.android.materialprogressbar/library/1.1.6/jars/classes.jar"
+>>>>>>> upstream/master
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+<<<<<<< HEAD
         sha1="df0171f37d16ae73a24a7c1a044e4dda806ef058">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\com.github.silvestrpredko-dot-progress-bar-0.1.4_7b8801cd45c92b581ff14bac9ba0b457a5a5b233.jar" />
     </item>
     <item
         is-multidex="false"
         jar="D:\Work\Android\ijoint\app\build\intermediates\exploded-aar\com.ogaclejapan.smarttablayout\utils-v4\1.6.1\jars\classes.jar"
+=======
+        sha1="ab3193b438e37f7b0a634cc2dfebbf92892ea90c">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/me.zhanghai.android.materialprogressbar-library-1.1.6_998f88a2ae0b2487d1600485dbc003f72b48db57.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/exploded-aar/com.android.support/preference-v7/23.4.0/jars/classes.jar"
+>>>>>>> upstream/master
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+<<<<<<< HEAD
         sha1="7dc4e0ea5b06183f6b32f08c5db6bcb6ef79c02a">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\com.ogaclejapan.smarttablayout-utils-v4-1.6.1_150eb08f66504c0f5b469879048651ca621cf782.jar" />
     </item>
     <item
         is-multidex="false"
         jar="D:\Work\Android\ijoint\app\build\intermediates\exploded-aar\com.android.support\design\23.4.0\jars\classes.jar"
+=======
+        sha1="b954d8588de65c67c1ec482678620845bbb5f737">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/com.android.support-preference-v7-23.4.0_5b59ac2d45cc10c0e2e79a1d997a82b9c96f9509.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.8.0/5ea7af56cc7c567ed9856d99efb30740e9b17ff/okio-1.8.0.jar"
+>>>>>>> upstream/master
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+<<<<<<< HEAD
         sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.4.0_ad4715e020f7afd781a20067631760c126d7f5f0.jar" />
     </item>
     <item
         is-multidex="false"
         jar="D:\Work\Android\ijoint\app\build\intermediates\exploded-aar\com.jakewharton\butterknife\8.1.0\jars\classes.jar"
+=======
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/okio-1.8.0_d84a4aacf4ab5f774cd5ad7b347c7bc117e088b0.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/exploded-aar/com.afollestad/easyvideoplayer/0.2.9/jars/classes.jar"
+>>>>>>> upstream/master
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+<<<<<<< HEAD
         sha1="d4ab8678882571a0a6f19c47a826ecbce5b4f42b">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\com.jakewharton-butterknife-8.1.0_c9a712b22ed206cb595b0c6c7bb17327aee36c7a.jar" />
     </item>
     <item
         is-multidex="false"
         jar="C:\Users\Phetkhung\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+=======
+        sha1="2fd0c744842227ea202e621e13d56c8d6a76625b">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/com.afollestad-easyvideoplayer-0.2.9_5b101b3ec7b89f236746509795ef10b532e93693.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/exploded-aar/com.github.silvestrpredko/dot-progress-bar/0.1.4/jars/classes.jar"
+>>>>>>> upstream/master
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+<<<<<<< HEAD
         sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\glide-3.7.0_7b92a9dec4b305217353e0fd248ce614a639e2c4.jar" />
     </item>
     <item
         is-multidex="false"
         jar="D:\AndroidSDK\extras\android\m2repository\com\android\support\support-annotations\24.0.0\support-annotations-24.0.0.jar"
+=======
+        sha1="df0171f37d16ae73a24a7c1a044e4dda806ef058">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/com.github.silvestrpredko-dot-progress-bar-0.1.4_5f566bb8217cbcd56d74e1bd4361ab7a7a2d3b0b.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.1.0/d6854f42bfb4098d3d2358d93201307b9f1cc95d/butterknife-annotations-8.1.0.jar"
+>>>>>>> upstream/master
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+<<<<<<< HEAD
         sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\support-annotations-24.0.0_2f9963bcfe7d93a6d78bd0ad5f63b88ecdac23e4.jar" />
     </item>
     <item
         is-multidex="false"
         jar="C:\Users\Phetkhung\.gradle\caches\modules-2\files-2.1\io.reactivex\rxjava\1.1.6\2586312cd2b8a511e4c6236736f5a039fc0f2273\rxjava-1.1.6.jar"
+=======
+        sha1="d6854f42bfb4098d3d2358d93201307b9f1cc95d">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/butterknife-annotations-8.1.0_8b4fdf5ac6cf076a8d5288b694308c56ebdd9979.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/.gradle/caches/modules-2/files-2.1/com.jakewharton.hugo/hugo-annotations/1.2.1/b01150795c5cdca1eb7e501bf00f105ff0e31501/hugo-annotations-1.2.1.jar"
         jumboMode="false"
-        optimize="false"
+        revision="24.0.0"
+        sha1="b01150795c5cdca1eb7e501bf00f105ff0e31501">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/hugo-annotations-1.2.1_af2b3f4483b66991d8e16a92720a9449ea970b03.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.1.6/2586312cd2b8a511e4c6236736f5a039fc0f2273/rxjava-1.1.6.jar"
+>>>>>>> upstream/master
+        jumboMode="false"
         revision="24.0.0"
         sha1="2586312cd2b8a511e4c6236736f5a039fc0f2273">
+<<<<<<< HEAD
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\rxjava-1.1.6_ea01d1e60a7239a352e5afd36a742731fa9ef0a2.jar" />
     </item>
     <item
         is-multidex="false"
         jar="D:\Work\Android\ijoint\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\libs\internal_impl-24.0.0.jar"
+=======
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/rxjava-1.1.6_79a79012cc0a449fc05adf9ca9de6e36fac0f25e.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.0.0/jars/classes.jar"
+>>>>>>> upstream/master
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+<<<<<<< HEAD
         sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\internal_impl-24.0.0_6c2f4f098d17445554648a6d6991179469f9d2df.jar" />
     </item>
     <item
         is-multidex="false"
         jar="D:\Work\Android\ijoint\app\build\intermediates\exploded-aar\io.reactivex\rxandroid\1.2.1\jars\classes.jar"
+=======
+        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.0.0_6470a2a9e0e91e8f76e3089238c163f7d29bab7c.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+>>>>>>> upstream/master
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+<<<<<<< HEAD
         sha1="5a2386ad9bfff580b206a7fe305cdccd00798159">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\io.reactivex-rxandroid-1.2.1_9af6aa6f805095b959d343a64a979ef4efe8d78e.jar" />
     </item>
     <item
         is-multidex="false"
         jar="D:\Work\Android\ijoint\app\build\intermediates\exploded-aar\eu.davidea\flexible-adapter\5.0.0-b7\jars\classes.jar"
+=======
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/internal_impl-24.0.0_2360d67f224a37dd4c5724d9d9bcc409384b02a9.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.7.0/9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4/glide-3.7.0.jar"
+>>>>>>> upstream/master
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+<<<<<<< HEAD
         sha1="754502edff54ce1d4d5fe67c61e4bfd451a8c89d">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\eu.davidea-flexible-adapter-5.0.0-b7_7ad2d2ba6e4b359eb891498f2e043d0c95f340ba.jar" />
     </item>
     <item
         is-multidex="false"
         jar="D:\Work\Android\ijoint\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.4.0\jars\classes.jar"
+=======
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/glide-3.7.0_a69cd37dba4b674f6eaf92174ed8fc0c3cd4ad75.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.0.0/jars/classes.jar"
+>>>>>>> upstream/master
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+<<<<<<< HEAD
         sha1="d9ecde39b460470e655de6e47c05573d2d5a8bfb">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-23.4.0_c3d9c4a2c62f5f15406c5521069b98740c1258ff.jar" />
     </item>
     <item
         is-multidex="false"
         jar="C:\Users\Phetkhung\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.2\f8d87f15b94b8d74e7ccf61d7eedb558811cdb30\converter-gson-2.0.2.jar"
+=======
+        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.0.0_5a8eba2deea7d50dcb22c44bc734e4cbb98853fa.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/exploded-aar/io.reactivex/rxandroid/1.2.1/jars/classes.jar"
+>>>>>>> upstream/master
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+<<<<<<< HEAD
         sha1="f8d87f15b94b8d74e7ccf61d7eedb558811cdb30">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\converter-gson-2.0.2_d71782832f6a8d732a59213c38d2a259a8fe2984.jar" />
     </item>
     <item
         is-multidex="false"
         jar="D:\Work\Android\ijoint\app\build\intermediates\exploded-aar\me.zhanghai.android.materialprogressbar\library\1.1.6\jars\classes.jar"
+=======
+        sha1="5a2386ad9bfff580b206a7fe305cdccd00798159">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/io.reactivex-rxandroid-1.2.1_9ba35a9df1f514fa16af4ca9e4ef29a8962b4fec.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/exploded-aar/eu.davidea/flexible-adapter/5.0.0-b7/jars/classes.jar"
+>>>>>>> upstream/master
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+<<<<<<< HEAD
         sha1="ab3193b438e37f7b0a634cc2dfebbf92892ea90c">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\me.zhanghai.android.materialprogressbar-library-1.1.6_f57aa7c8c1969f86047e8ab38fc7499c962168bd.jar" />
     </item>
@@ -256,11 +448,22 @@
     <item
         is-multidex="false"
         jar="C:\Users\Phetkhung\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.8.0\5ea7af56cc7c567ed9856d99efb30740e9b17ff\okio-1.8.0.jar"
+=======
+        sha1="754502edff54ce1d4d5fe67c61e4bfd451a8c89d">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/eu.davidea-flexible-adapter-5.0.0-b7_61d76e23797d55ebd24235cf7f16857ae37a79b8.jar" />
+    </item>
+    <item
+        jar="/Users/Nuntiya/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.0.2/f8d87f15b94b8d74e7ccf61d7eedb558811cdb30/converter-gson-2.0.2.jar"
+>>>>>>> upstream/master
         jumboMode="false"
-        optimize="false"
         revision="24.0.0"
+<<<<<<< HEAD
         sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
         <dex dex="D:\Work\Android\ijoint\app\build\intermediates\pre-dexed\debug\okio-1.8.0_1f69bf6866cd8ff4e536674045e0c2172fd4d32d.jar" />
+=======
+        sha1="f8d87f15b94b8d74e7ccf61d7eedb558811cdb30">
+        <dex dex="/Users/Nuntiya/GitHub/ijoint/app/build/intermediates/pre-dexed/debug/converter-gson-2.0.2_d92a36355cbb56bab38773cf9af789ffdc1ebc4e.jar" />
+>>>>>>> upstream/master
     </item>
 
 </items>
