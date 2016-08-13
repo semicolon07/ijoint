@@ -30,6 +30,7 @@
     <string name="setting">Setting</string>
     <string name="uploading">Now Uploading...</string>
     <string name="cannot_connect_server">Can\'t connect right now.</string>
+    <string name="popup_menu_delete">Delete</string>
 
     <!--Main-->
     <string name="tab_treatment">Treatment</string>
@@ -39,7 +40,7 @@
     <!--Treatment Tab-->
     <string name="treatment_new_header">New Treatment</string>
     <string name="treatment_list_item_arm_side_label">Arm side : </string>
-    <string name="treatment_during_header">During Treatment</string>
+    <string name="treatment_during_header">Current Treatment</string>
 
     <!--Menu-->
     <string name="profile_menu_app_setting">Application Setting</string>
@@ -68,10 +69,13 @@
     <string name="task_exercise_type_flexion">Flexion</string>
     <string name="task_exercise_type_horizontal_flexion">Horizontal Flexion</string>
     <string name="task_new_treatment_header">Record first angle for start Treatment</string>
-    <string name="task_during_today_treatment_header">Today Task</string>
-    <string name="task_during_older_treatment_header">Older Task</string>
+    <string name="task_during_today_treatment_header">Today Tasks</string>
+    <string name="task_during_older_treatment_header">Remaining Tasks</string>
 
     <!--Exercise Video-->
     <string name="exercise_video_header">Example Video for Patient</string>
+    <string name="treatment_all">All</string>
+    <string name="treatment_left">Left</string>
+    <string name="treatment_right">Right</string>
 
 </resources>

@@ -23,7 +23,7 @@ public class TaskDataSource {
             MySQLiteHelper.COL_TASK_SIDE, MySQLiteHelper.COL_TASK_TARGET_ANGLE,
             MySQLiteHelper.COL_TASK_NUMBER_OF_ROUND, MySQLiteHelper.COL_TASK_IS_ABF,
             MySQLiteHelper.COL_TASK_IS_SYNCED, MySQLiteHelper.COL_TASK_PERFORM_DATETIME,
-            MySQLiteHelper.COL_EXERCISE_TYPE, MySQLiteHelper.COL_SCORE, MySQLiteHelper.COL_TREATMENT_NO, MySQLiteHelper.COL_TASK_TYPE};
+            MySQLiteHelper.COL_EXERCISE_TYPE, MySQLiteHelper.COL_SCORE, MySQLiteHelper.COL_TREATMENT_NO, MySQLiteHelper.COL_TASK_TYPE, MySQLiteHelper.COL_INCREASE_TARGET};
 
     public TaskDataSource(Context context) {
         dbHelper = new MySQLiteHelper(context);
@@ -38,7 +38,7 @@ public class TaskDataSource {
     }
 
     public Task create(String tid, String pid, String date, String side, String target_angle,
-                       String number_of_round, String is_abf, String is_synced, String perform_datetime, String exercise_type, String treatmentNo, String taskType) {
+                       String number_of_round, String is_abf, String is_synced, String perform_datetime, String exercise_type, String treatmentNo, String taskType,String increaseTarget) {
         ContentValues values = new ContentValues();
         values.put(MySQLiteHelper.COL_TASK_ID, tid);
         values.put(MySQLiteHelper.COL_TREATMENT_NO, treatmentNo);
@@ -53,13 +53,14 @@ public class TaskDataSource {
         values.put(MySQLiteHelper.COL_EXERCISE_TYPE, exercise_type);
         values.put(MySQLiteHelper.COL_SCORE, "0");
         values.put(MySQLiteHelper.COL_TASK_TYPE, taskType);
+        values.put(MySQLiteHelper.COL_INCREASE_TARGET, increaseTarget);
         database.insert(TABLE, null, values);
 
         return this.get(tid);
     }
 
     public void edit(String tid, String pid, String date, String side, String target_angle,
-                     String number_of_round, String is_abf, String exercise_type, String taskType) {
+                     String number_of_round, String is_abf, String exercise_type, String taskType,String increaseTarget) {
         database.execSQL("UPDATE " + TABLE + " SET "
                 + MySQLiteHelper.COL_TASK_PID + " = '" + pid + "', "
                 + MySQLiteHelper.COL_TASK_DATE + " = '" + date + "', "
@@ -68,6 +69,7 @@ public class TaskDataSource {
                 + MySQLiteHelper.COL_TASK_NUMBER_OF_ROUND + " = '" + number_of_round + "', "
                 + MySQLiteHelper.COL_TASK_IS_ABF + " = '" + is_abf + "',"
                 + MySQLiteHelper.COL_EXERCISE_TYPE + " = '" + exercise_type + "', "
+                + MySQLiteHelper.COL_INCREASE_TARGET + " = '" + increaseTarget + "', "
                 + MySQLiteHelper.COL_TASK_TYPE + " = '" + taskType + "' "
                 + " WHERE " + PRIMARY_KEY + " = '" + tid + "'");
     }
@@ -215,6 +217,7 @@ public class TaskDataSource {
         elem.exercise_type = cursor.getString(9);
         elem.score = cursor.getString(10);
         elem.taskType = cursor.getString(12);
+        elem.increase_target = cursor.getString(13);
         return elem;
     }
 }

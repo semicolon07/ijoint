@@ -56,6 +56,7 @@ public class CalibrationActivity extends BaseActivity implements Orientation.Lis
     private ArrayList<ResultItem> resultItems;
     private String exercise_type;
     private String azimuthAngle;
+    private String increase_target;
     private Task task;
 
     @Override
@@ -78,7 +79,7 @@ public class CalibrationActivity extends BaseActivity implements Orientation.Lis
         numberOfRound = task.number_of_round;
         exercise_type = task.exercise_type;
         isABF = task.is_abf;
-
+        increase_target = task.increase_target;
         df = new DecimalFormat("0.00");
 
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
@@ -128,12 +129,12 @@ public class CalibrationActivity extends BaseActivity implements Orientation.Lis
         if (!isFinish){
             float angle = 0;
             float supAngle = 0;
-            if(Task.EXTENSION.equals(exercise_type)){
+            if(Task.HORIZONTAL.equals(exercise_type)){
                 angle = azimuth;
                 azimuthAngle = df.format(azimuth);
                 supAngle = pitch;
             }
-            else if(Task.HORIZONTAL.equals(exercise_type)){
+            else if(Task.EXTENSION.equals(exercise_type)){
                 angle = pitch;
                 supAngle = pitch + 90 ;
             }
@@ -232,6 +233,7 @@ public class CalibrationActivity extends BaseActivity implements Orientation.Lis
         i.putExtra("calibrated_angle", calibratedAngle);
         i.putExtra("exercise_type",exercise_type);
         i.putExtra("azimuthAngle",azimuthAngle);
+        i.putExtra("increase_target",increase_target);
         i.putExtra("isABF",isABF);
         startActivity(i);
         finish();

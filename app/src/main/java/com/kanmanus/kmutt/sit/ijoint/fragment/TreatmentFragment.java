@@ -14,6 +14,7 @@ import com.kanmanus.kmutt.sit.ijoint.MyApplication;
 import com.kanmanus.kmutt.sit.ijoint.R;
 import com.kanmanus.kmutt.sit.ijoint.adapter.model.AdapterMapping;
 import com.kanmanus.kmutt.sit.ijoint.adapter.model.HeaderRecyclerViewItem;
+import com.kanmanus.kmutt.sit.ijoint.adapter.model.TreatmentChooseTypeRecyclerViewItem;
 import com.kanmanus.kmutt.sit.ijoint.adapter.model.TreatmentRecyclerViewItem;
 import com.kanmanus.kmutt.sit.ijoint.datamanager.TreatmentDataManager;
 import com.kanmanus.kmutt.sit.ijoint.models.PatientProfileViewModel;
@@ -37,7 +38,7 @@ import rx.Subscription;
  * Created by Pongpop Inkeaw on 01/01/2016.
  */
 public class TreatmentFragment extends BaseFragment
-        implements SwipeRefreshLayout.OnRefreshListener, TreatmentRecyclerViewItem.Listener {
+        implements SwipeRefreshLayout.OnRefreshListener, TreatmentRecyclerViewItem.Listener,TreatmentChooseTypeRecyclerViewItem.Listener {
 
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
@@ -51,6 +52,7 @@ public class TreatmentFragment extends BaseFragment
     private PatientProfileViewModel profileViewModel;
     private TreatmentDataManager dataManager;
     private Subscription loadAllTreatmentSubscription;
+    private String armSideSelected;
 
     public TreatmentFragment() {
         super();
@@ -67,6 +69,7 @@ public class TreatmentFragment extends BaseFragment
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         init(savedInstanceState);
+        armSideSelected = TreatmentDataManager.ARM_SIDE_ALL;
         profileViewModel = MyApplication.getInstance().getSession();
         treatmentList = new ArrayList<>();
         adapter = new FlexibleAdapter<>(treatmentList);
@@ -90,8 +93,15 @@ public class TreatmentFragment extends BaseFragment
         // Init Fragment level's variable(s) here
     }
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        setActionBarTitle(TreatmentDataManager.ARM_SIDE_ALL);
+    }
+
     @SuppressWarnings("UnusedParameters")
     private void initInstances(View rootView, Bundle savedInstanceState) {
+
         //stub.inflate();
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(adapter);
@@ -102,7 +112,6 @@ public class TreatmentFragment extends BaseFragment
                 int topRowVerticalPosition =
                         (recyclerView == null || recyclerView.getChildCount() == 0) ? 0 : recyclerView.getChildAt(0).getTop();
                 swipeRefreshLayout.setEnabled(topRowVerticalPosition >= 0);
-
             }
 
             @Override
@@ -111,13 +120,13 @@ public class TreatmentFragment extends BaseFragment
             }
         });
 
-        loadAllTreatment();
+        loadAllTreatment(armSideSelected);
     }
 
-    private void loadAllTreatment() {
+    private void loadAllTreatment(String armSide) {
         swipeRefreshLayout.post(() -> {
             swipeRefreshLayout.setRefreshing(true);
-            loadAllTreatmentSubscription = dataManager.getAllTreatment(profileViewModel.getPId(), new LoadAllTreatmentSubscriber());
+            loadAllTreatmentSubscription = dataManager.getAllTreatment(profileViewModel.getPId(), armSide,new LoadAllTreatmentSubscriber());
         });
 
     }
@@ -125,6 +134,13 @@ public class TreatmentFragment extends BaseFragment
     @Override
     public void onTreatmentItemClicked(TreatmentModel treatmentModel) {
         navigator.navigateToTasks(getActivity(), treatmentModel);
+    }
+
+    @Override
+    public void onTreatmentArmSideClick(String armSide) {
+        setActionBarTitle(armSide);
+        armSideSelected = armSide;
+        loadAllTreatment(armSideSelected);
     }
 
     class LoadAllTreatmentSubscriber extends DefaultSubscriber<AllTreatmentResponse> {
@@ -147,10 +163,25 @@ public class TreatmentFragment extends BaseFragment
         }
     }
 
-    private final View.OnClickListener onRetryConnectClickListener = v -> loadAllTreatment();
+    private void setActionBarTitle(String armSide){
+        int armSideResText = R.string.treatment_all;
+        if(armSide.equals(TreatmentDataManager.ARM_SIDE_LEFT))
+            armSideResText = R.string.treatment_left;
+        if(armSide.equals(TreatmentDataManager.ARM_SIDE_RIGHT))
+            armSideResText = R.string.treatment_right;
+
+        getActionBar().setTitle(getString(R.string.tab_treatment)+" ("+getString(armSideResText)+")");
+    }
+
+
+    private final View.OnClickListener onRetryConnectClickListener = v -> loadAllTreatment(armSideSelected);
 
     private void renderTreatmentList(AllTreatmentResponse allTreatmentResponse) {
         treatmentList.clear();
+
+        TreatmentChooseTypeRecyclerViewItem typeRecyclerViewItem = new TreatmentChooseTypeRecyclerViewItem(this);
+        treatmentList.add(typeRecyclerViewItem);
+
         List<TreatmentResponse> newTreatments = allTreatmentResponse.getNewTreatmentResponses();
         List<TreatmentResponse> duringTreatments = allTreatmentResponse.getDuringTreatmentResponses();
         if (newTreatments.size() > 0) {
@@ -164,7 +195,7 @@ public class TreatmentFragment extends BaseFragment
             treatmentList.addAll(convert(duringTreatments));
         }
         adapter.notifyDataSetChanged();
-        if(treatmentList.size() == 0){
+        if(treatmentList.size() == 1){
             stub.setVisibility(View.VISIBLE);
         }else{
             stub.setVisibility(View.GONE);
@@ -195,6 +226,6 @@ public class TreatmentFragment extends BaseFragment
 
     @Override
     public void onRefresh() {
-        loadAllTreatment();
+        loadAllTreatment(armSideSelected);
     }
 }

@@ -17,7 +17,7 @@ public class Task {
     public String perform_datetime;
     public String exercise_type;
     public String score;
-
+    public String increase_target;
     @SerializedName("treatmentNo")
     public String treatmentNo;
 

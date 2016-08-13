@@ -89,9 +89,9 @@ public class MainActivity extends BaseActivity {
         profileTabModel.setIconResId(R.drawable.ic_account_box);
 
 
-        tabModels.add(treatmentTabModel);
-        tabModels.add(videoTabModel);
         tabModels.add(profileTabModel);
+        tabModels.add(videoTabModel);
+        tabModels.add(treatmentTabModel);
     }
 
     private class TabLayoutProvider implements SmartTabLayout.TabProvider {

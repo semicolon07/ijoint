@@ -16,17 +16,17 @@ public class ExerciseVideoDataManager extends BaseDataManager {
         ExerciseVideoModel videoModel2 = new ExerciseVideoModel();
         ExerciseVideoModel videoModel3 = new ExerciseVideoModel();
 
-        videoModel1.setName("Video 1");
-        videoModel1.setDescription("Video 1 Description");
-        videoModel1.setVideoFileName("example_video_01");
+        videoModel1.setName("Horizontal Flexion");
+        videoModel1.setDescription("Horizontal Flexion Description");
+        videoModel1.setVideoFileName("hflexion");
 
-        videoModel2.setName("Video 2");
-        videoModel2.setDescription("Video 2 Description");
-        videoModel2.setVideoFileName("example_video_01");
+        videoModel2.setName("Extension");
+        videoModel2.setDescription("Extension Description");
+        videoModel2.setVideoFileName("extension");
 
-        videoModel3.setName("Video 3");
-        videoModel3.setDescription("Video 3 Description");
-        videoModel3.setVideoFileName("example_video_01");
+        videoModel3.setName("Flexion");
+        videoModel3.setDescription("Flexion Description");
+        videoModel3.setVideoFileName("flexion");
 
         exerciseVideoModels.add(videoModel1);
         exerciseVideoModels.add(videoModel2);

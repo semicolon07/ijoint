@@ -28,4 +28,6 @@ public class TreatmentResponse {
 
     @SerializedName("treatmentNo")
     private int treatmentNo;
+
+
 }

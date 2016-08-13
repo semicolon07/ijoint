@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
@@ -20,6 +22,10 @@ import java.net.SocketTimeoutException;
 public class BaseFragment extends Fragment {
     private Snackbar snackbar;
     protected Navigator navigator;
+
+    public ActionBar getActionBar() {
+        return ((AppCompatActivity) getActivity()).getSupportActionBar();
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

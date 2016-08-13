@@ -24,7 +24,7 @@ public interface IjointService {
 
     @FormUrlEncoded
     @POST(URL.GET_ALL_TREATMENT)
-    Observable<AllTreatmentResponse> getAllTreatment(@Field("pid") String pId,@Field("date") String date);
+    Observable<AllTreatmentResponse> getAllTreatment(@Field("pid") String pId,@Field("date") String date,@Field("arm_side") String armSide);
 
     @FormUrlEncoded
     @POST(URL.GET_TASK_HISTORY)

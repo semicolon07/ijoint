@@ -36,8 +36,12 @@ import rx.Subscription;
  */
 
 public class TreatmentDataManager extends BaseDataManager{
-    public Subscription getAllTreatment(String patientId, DefaultSubscriber subscriber){
-        Observable<AllTreatmentResponse> call = HttpManager.getInstance().getService().getAllTreatment(patientId, DateTimeUtils.getDate(DateTimeUtils.yyyy_MM_dd));
+    public static final String ARM_SIDE_LEFT = "l";
+    public static final String ARM_SIDE_RIGHT = "r";
+    public static final String ARM_SIDE_ALL = "all";
+
+    public Subscription getAllTreatment(String patientId,String armSide, DefaultSubscriber subscriber){
+        Observable<AllTreatmentResponse> call = HttpManager.getInstance().getService().getAllTreatment(patientId, DateTimeUtils.getDate(DateTimeUtils.yyyy_MM_dd),armSide);
         return executeObservable(call,subscriber);
     }
 
@@ -112,10 +116,10 @@ public class TreatmentDataManager extends BaseDataManager{
                     if(tasks!=null){
                         for(Task task : tasks){
                             if (taskDataSource.get(task.tid) == null){
-                                taskDataSource.create(task.tid, task.pid, task.date, task.side, task.target_angle, task.number_of_round, task.is_abf, "n", "0000-00-00",task.exercise_type,task.treatmentNo,task.taskType);
+                                taskDataSource.create(task.tid, task.pid, task.date, task.side, task.target_angle, task.number_of_round, task.is_abf, "n", "0000-00-00",task.exercise_type,task.treatmentNo,task.taskType,task.increase_target);
                             }
                             else{
-                                taskDataSource.edit(task.tid, task.pid, task.date, task.side, task.target_angle, task.number_of_round, task.is_abf,task.exercise_type,task.taskType);
+                                taskDataSource.edit(task.tid, task.pid, task.date, task.side, task.target_angle, task.number_of_round, task.is_abf,task.exercise_type,task.taskType,task.increase_target);
                             }
                         }
                     }
