@@ -5,6 +5,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubeThumbnailLoader;
+import com.google.android.youtube.player.YouTubeThumbnailView;
+import com.kanmanus.kmutt.sit.ijoint.Contextor;
 import com.kanmanus.kmutt.sit.ijoint.R;
 import com.kanmanus.kmutt.sit.ijoint.models.ExerciseVideoModel;
 
@@ -20,11 +24,14 @@ import eu.davidea.viewholders.FlexibleViewHolder;
 /**
  * Created by niceinkeaw on 29/3/2559.
  */
-public class ExerciseVideoRecyclerViewItem extends AbstractFlexibleItem<ExerciseVideoRecyclerViewItem.ViewHolder> {
+public class ExerciseVideoRecyclerViewItem extends AbstractFlexibleItem<ExerciseVideoRecyclerViewItem.ViewHolder> implements YouTubeThumbnailView.OnInitializedListener {
 
     private ExerciseVideoModel modelItem;
     private String id;
     private Listener listener;
+    private YouTubeThumbnailLoader youTubeThumbnailLoader;
+
+
 
     public interface Listener {
         void onExerciseItemClicked(ExerciseVideoModel item);
@@ -60,12 +67,24 @@ public class ExerciseVideoRecyclerViewItem extends AbstractFlexibleItem<Exercise
         holder.nameTextView.setText(modelItem.getName());
         holder.descriptionTextView.setText(modelItem.getDescription());
         holder.modelItem = this.modelItem;
+        holder.thumbnailView.setTag(modelItem.getYoutubeLinkId());
+        holder.thumbnailView.initialize(Contextor.getInstance().getContext().getString(R.string.API_KEY), this);
     }
 
 
     @Override
     public int getLayoutRes() {
         return R.layout.list_item_sample_video;
+    }
+
+    @Override
+    public void onInitializationSuccess(YouTubeThumbnailView youTubeThumbnailView, YouTubeThumbnailLoader youTubeThumbnailLoader) {
+        youTubeThumbnailLoader.setVideo(String.valueOf(youTubeThumbnailView.getTag()));
+    }
+
+    @Override
+    public void onInitializationFailure(YouTubeThumbnailView youTubeThumbnailView, YouTubeInitializationResult youTubeInitializationResult) {
+
     }
 
     public void setListener(Listener listener) {
@@ -78,6 +97,8 @@ public class ExerciseVideoRecyclerViewItem extends AbstractFlexibleItem<Exercise
         TextView nameTextView;
         @BindView(R.id.description_textView)
         TextView descriptionTextView;
+        @BindView(R.id.imageView_thumbnail)
+        YouTubeThumbnailView thumbnailView;
 
         public ViewHolder(View view, FlexibleAdapter adapter) {
             super(view, adapter);

@@ -77,5 +77,7 @@
     <string name="treatment_all">All</string>
     <string name="treatment_left">Left</string>
     <string name="treatment_right">Right</string>
+    <string name="API_KEY">AIzaSyA_LYwKgnec6CqPQMPN3rBRZFZAX7KthEs</string>
+    <string name="error_init_failure">Initialization failure: Unable to play video</string>
 
 </resources>

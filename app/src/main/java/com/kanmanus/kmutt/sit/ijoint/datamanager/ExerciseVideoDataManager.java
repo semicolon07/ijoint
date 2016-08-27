@@ -19,14 +19,17 @@ public class ExerciseVideoDataManager extends BaseDataManager {
         videoModel1.setName("Horizontal Flexion");
         videoModel1.setDescription("Horizontal Flexion Description");
         videoModel1.setVideoFileName("hflexion");
+        videoModel1.setYoutubeLinkId("-IRlSpdgvJY");
 
         videoModel2.setName("Extension");
         videoModel2.setDescription("Extension Description");
         videoModel2.setVideoFileName("extension");
+        videoModel2.setYoutubeLinkId("vE8YtA8AobM");
 
         videoModel3.setName("Flexion");
         videoModel3.setDescription("Flexion Description");
         videoModel3.setVideoFileName("flexion");
+        videoModel3.setYoutubeLinkId("tWoeUymdBAw");
 
         exerciseVideoModels.add(videoModel1);
         exerciseVideoModels.add(videoModel2);

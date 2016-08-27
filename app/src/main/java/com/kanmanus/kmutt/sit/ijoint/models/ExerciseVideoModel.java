@@ -13,4 +13,5 @@ public class ExerciseVideoModel {
     private String description;
     private String videoFileName;
     private Uri videoUri;
+    private String youtubeLinkId;
 }
