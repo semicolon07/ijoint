@@ -264,7 +264,7 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
             EXERCISE_STATE = EXERCISE_TARGET_80;
         }
         if(state.equals(EXERCISE_TARGET_80) && angle > target){
-            if(isABF.equals(YES)){
+            if(isABF.equals(YES) && score == 0){
                 soundPool.play(soundPoolMap.get(S_BEEP), 0.6f, 0.6f, 1, 0, 1f);
                 soundPool.play(soundPoolMap.get(GREAT), 0.6f, 0.6f, 1, 0, 1f);
             }
@@ -274,10 +274,10 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
             EXERCISE_STATE = EXERCISE_SUCCESS;
         }
         if(state.equals(EXERCISE_SUCCESS) && angle > targetTmp){
-//            if(isABF.equals(YES)){
-//                soundPool.play(soundPoolMap.get(S_BEEP), 0.6f, 0.6f, 1, 0, 1f);
-//                soundPool.play(soundPoolMap.get(GREAT), 0.6f, 0.6f, 1, 0, 1f);
-//            }
+            if(isABF.equals(YES) && score > 0){
+                soundPool.play(soundPoolMap.get(S_BEEP), 0.6f, 0.6f, 1, 0, 1f);
+                soundPool.play(soundPoolMap.get(GREAT), 0.6f, 0.6f, 1, 0, 1f);
+            }
             increaseTarget(180);
         }
         if (state.equals(EXERCISE_SUCCESS) && angle < 5) {
@@ -314,7 +314,7 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
             EXERCISE_STATE = EXERCISE_TARGET_80;
         }
         if(state.equals(EXERCISE_TARGET_80) && angle < target){
-            if(isABF.equals(YES)){
+            if(isABF.equals(YES) && score == 0){
                 soundPool.play(soundPoolMap.get(S_BEEP), 0.6f, 0.6f, 1, 0, 1f);
                 soundPool.play(soundPoolMap.get(GREAT), 0.6f, 0.6f, 1, 0, 1f);
             }
@@ -324,10 +324,10 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
             EXERCISE_STATE = EXERCISE_SUCCESS;
         }
         if(state.equals(EXERCISE_SUCCESS) && angle < targetTmp){
-//            if(isABF.equals(YES)){
-//                soundPool.play(soundPoolMap.get(S_BEEP), 0.6f, 0.6f, 1, 0, 1f);
-//                soundPool.play(soundPoolMap.get(GREAT), 0.6f, 0.6f, 1, 0, 1f);
-//            }
+            if(isABF.equals(YES) && score > 0){
+                soundPool.play(soundPoolMap.get(S_BEEP), 0.6f, 0.6f, 1, 0, 1f);
+                soundPool.play(soundPoolMap.get(GREAT), 0.6f, 0.6f, 1, 0, 1f);
+            }
             decreaseTarget(-45);
         }
         if (state.equals(EXERCISE_SUCCESS) && angle > -5) {
